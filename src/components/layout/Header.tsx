@@ -1,15 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Monitor } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
 const solutions = [
@@ -19,214 +10,186 @@ const solutions = [
   { title: "Real Estate", href: "/solutions/digital-signage-real-estate/", description: "Property listings & showcases" },
   { title: "Healthcare", href: "/solutions/digital-signage-healthcare/", description: "Patient info & wayfinding" },
   { title: "Hospitality", href: "/solutions/digital-signage-hospitality/", description: "Guest services & directories" },
+  { title: "Corporate", href: "/solutions/digital-signage-corporate/", description: "Internal comms & dashboards" },
+  { title: "Gym & Fitness", href: "/solutions/digital-signage-gym/", description: "Class schedules & promotions" },
 ];
 
-const features = [
-  { title: "Video Wall", href: "/digital-signage-features/video-wall/", description: "Create stunning multi-screen displays" },
+const featuresNav = [
+  { title: "Content Designer", href: "/digital-signage-features/designer/", description: "Drag & drop canvas editor" },
   { title: "Scheduling", href: "/digital-signage-features/scheduling/", description: "Plan content weeks in advance" },
-  { title: "Templates", href: "/digital-signage-features/templates/", description: "Professional ready-made designs" },
-  { title: "Analytics", href: "/digital-signage-features/analytics/", description: "AI-powered audience insights" },
-  { title: "All Features", href: "/digital-signage-features/", description: "Explore all capabilities" },
+  { title: "Templates", href: "/digital-signage-features/templates/", description: "500+ professional templates" },
+  { title: "Video Wall", href: "/digital-signage-features/video-wall/", description: "Multi-screen displays" },
+  { title: "Analytics", href: "/digital-signage-features/analytics/", description: "Proof of play & insights" },
+  { title: "All Features →", href: "/digital-signage-features/", description: "" },
 ];
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setOpenDropdown(null);
   }, [location]);
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50"
-          : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-white",
+        isScrolled ? "shadow-sm border-b border-border" : "border-b border-transparent"
       )}
     >
       <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between h-20">
+        <nav className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-              <Monitor className="w-5 h-5 text-primary-foreground" />
+          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+              <Monitor className="w-4 h-4 text-white" />
             </div>
-            <span className="text-xl font-display font-bold">
-              Screen<span className="gradient-text">Fusion</span>
+            <span className="text-lg font-display font-bold text-foreground">
+              Screen<span className="text-primary">Fusion</span>
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent hover:bg-secondary/50">
-                    Solutions
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[500px] gap-2 p-4 md:grid-cols-2">
-                      {solutions.map((solution) => (
-                        <li key={solution.title}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={solution.href}
-                              className="block select-none rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary/50"
-                            >
-                              <div className="text-sm font-medium leading-none">{solution.title}</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
-                                {solution.description}
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+            {/* Solutions Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenDropdown("solutions")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
+                Solutions <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+              {openDropdown === "solutions" && (
+                <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-xl border border-border shadow-hover p-2 animate-fade-in">
+                  <div className="grid grid-cols-2 gap-1">
+                    {solutions.map((s) => (
+                      <Link
+                        key={s.title}
+                        to={s.href}
+                        className="block px-3 py-2.5 rounded-lg hover:bg-secondary transition-colors"
+                      >
+                        <div className="text-sm font-medium text-foreground">{s.title}</div>
+                        <div className="text-xs text-muted-foreground mt-0.5">{s.description}</div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent hover:bg-secondary/50">
-                    Features
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-2 p-4">
-                      {features.map((feature) => (
-                        <li key={feature.title}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={feature.href}
-                              className="block select-none rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-secondary/50"
-                            >
-                              <div className="text-sm font-medium leading-none">{feature.title}</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
-                                {feature.description}
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
+            {/* Features Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenDropdown("features")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
+                Features <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+              {openDropdown === "features" && (
+                <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl border border-border shadow-hover p-2 animate-fade-in">
+                  {featuresNav.map((f) => (
+                    <Link
+                      key={f.title}
+                      to={f.href}
+                      className="block px-3 py-2.5 rounded-lg hover:bg-secondary transition-colors"
+                    >
+                      <div className="text-sm font-medium text-foreground">{f.title}</div>
+                      {f.description && <div className="text-xs text-muted-foreground mt-0.5">{f.description}</div>}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-                <NavigationMenuItem>
-                  <Link
-                    to="/pricing/"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary/50"
-                  >
-                    Pricing
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link
-                    to="/digital-signage-software-partner-white-label/"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary/50"
-                  >
-                    Reseller
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link
-                    to="/contact/"
-                    className="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary/50"
-                  >
-                    Contact
-                  </Link>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            <Link to="/how-it-works/" className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
+              How It Works
+            </Link>
+            <Link to="/pricing/" className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
+              Pricing
+            </Link>
+            <Link to="/apps/" className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
+              Apps
+            </Link>
+            <Link to="/digital-signage-player/" className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
+              Hardware
+            </Link>
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button variant="ghost" asChild>
-              <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer">
-                Sign In
-              </a>
-            </Button>
-            <Button className="btn-hero" asChild>
-              <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer">
-                Start Free Trial
-              </a>
-            </Button>
+          <div className="hidden lg:flex items-center gap-2">
+            <a
+              href="https://manage.screenfusion.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+            >
+              Log In
+            </a>
+            <a
+              href="https://manage.screenfusion.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-sm px-5 py-2.5"
+            >
+              Try For Free
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Hamburger */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-secondary/50 transition-colors"
+            className="lg:hidden p-2 rounded-md text-foreground hover:bg-secondary transition-colors"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </nav>
+      </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border p-4 animate-fade-in">
-            <div className="flex flex-col gap-4">
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Solutions</p>
-                {solutions.map((solution) => (
-                  <Link
-                    key={solution.title}
-                    to={solution.href}
-                    className="block px-3 py-2 rounded-lg hover:bg-secondary/50 transition-colors"
-                  >
-                    {solution.title}
-                  </Link>
-                ))}
-              </div>
-              <div className="space-y-2">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Features</p>
-                {features.map((feature) => (
-                  <Link
-                    key={feature.title}
-                    to={feature.href}
-                    className="block px-3 py-2 rounded-lg hover:bg-secondary/50 transition-colors"
-                  >
-                    {feature.title}
-                  </Link>
-                ))}
-              </div>
-              <Link to="/pricing/" className="px-3 py-2 rounded-lg hover:bg-secondary/50 transition-colors">
-                Pricing
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-border shadow-md">
+          <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide pt-2 pb-1">Solutions</p>
+            {solutions.map((s) => (
+              <Link key={s.title} to={s.href} className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">
+                {s.title}
               </Link>
-              <Link to="/digital-signage-software-partner-white-label/" className="px-3 py-2 rounded-lg hover:bg-secondary/50 transition-colors">
-                Reseller
+            ))}
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide pt-3 pb-1">Features</p>
+            {featuresNav.map((f) => (
+              <Link key={f.title} to={f.href} className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">
+                {f.title}
               </Link>
-              <Link to="/contact/" className="px-3 py-2 rounded-lg hover:bg-secondary/50 transition-colors">
-                Contact
-              </Link>
-              <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="outline" asChild>
-                  <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer">
-                    Sign In
-                  </a>
-                </Button>
-                <Button className="btn-hero" asChild>
-                  <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer">
-                    Start Free Trial
-                  </a>
-                </Button>
-              </div>
+            ))}
+            <div className="border-t border-border mt-2 pt-3 flex flex-col gap-2">
+              <Link to="/pricing/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Pricing</Link>
+              <Link to="/apps/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Apps</Link>
+              <Link to="/digital-signage-player/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Hardware</Link>
+              <Link to="/how-it-works/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">How It Works</Link>
+            </div>
+            <div className="border-t border-border mt-2 pt-3 flex flex-col gap-2">
+              <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-center rounded-lg border border-border text-sm font-semibold text-foreground hover:bg-secondary transition-colors">
+                Log In
+              </a>
+              <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm text-center">
+                Try For Free
+              </a>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   );
 };

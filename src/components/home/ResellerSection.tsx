@@ -1,116 +1,84 @@
-import { 
-  CheckCircle2, 
-  Users, 
-  Palette, 
-  DollarSign, 
-  Settings, 
-  RefreshCw, 
-  Server,
-  ArrowRight 
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { CheckCircle, ArrowRight } from "lucide-react";
 
 const benefits = [
-  {
-    icon: DollarSign,
-    title: "Competitive Pricing",
-    description: "Significant volume discounts to stay competitive in your market.",
-  },
-  {
-    icon: Palette,
-    title: "White Labelling",
-    description: "Brand ScreenFusion under your name with your URL and logo.",
-  },
-  {
-    icon: Settings,
-    title: "Admin Portal",
-    description: "Manage client accounts, provide support, and control licenses.",
-  },
-  {
-    icon: Users,
-    title: "Dedicated Support",
-    description: "Priority technical support and training for your team.",
-  },
-  {
-    icon: RefreshCw,
-    title: "Free Updates",
-    description: "All software updates and new features included at no extra cost.",
-  },
-  {
-    icon: Server,
-    title: "Enterprise Infrastructure",
-    description: "Powered by Google Cloud Platform for reliability and scale.",
-  },
+  "Significant volume discounts — up to 50% off",
+  "White-label with your brand, URL & logo",
+  "Full admin portal to manage client accounts",
+  "Priority technical support & onboarding",
+  "Free software updates for all your clients",
+  "Co-marketing & sales material support",
+  "Dedicated partner success manager",
+  "API access for custom integrations",
 ];
 
 export const ResellerSection = () => {
   return (
-    <section className="py-24 bg-card/50">
+    <section className="py-20 section-alt">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Become a{" "}
-              <span className="gradient-text">ScreenFusion Partner</span>
-            </h2>
-            
-            <p className="text-lg text-muted-foreground mb-8">
-              Join our reseller program and offer enterprise-grade digital signage 
-              to your clients. We handle the technology, you grow your business.
-            </p>
-            
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {benefits.map((benefit) => (
-                <div key={benefit.title} className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <benefit.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">{benefit.title}</h4>
-                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
-                  </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left visual */}
+          <div className="relative order-2 lg:order-1">
+            <div className="bg-white rounded-2xl border border-border shadow-card p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">🤝</span>
                 </div>
-              ))}
-            </div>
-            
-            <Button className="btn-hero group" asChild>
-              <Link to="/digital-signage-software-partner-white-label/">
-                Become a Reseller
-                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-          
-          {/* Visual */}
-          <div className="relative">
-            <div className="gradient-border p-1 rounded-3xl">
-              <div className="bg-card rounded-3xl p-8 md:p-12">
-                <div className="text-center">
-                  <div className="text-6xl md:text-7xl font-display font-bold gradient-text mb-4">
-                    50%+
-                  </div>
-                  <p className="text-xl text-muted-foreground mb-6">
-                    Partner Discount Available
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2 justify-center text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-primary" />
-                      Fully managed cloud service
-                    </div>
-                    <div className="flex items-center gap-2 justify-center text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-primary" />
-                      Your branding, your clients
-                    </div>
-                    <div className="flex items-center gap-2 justify-center text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-primary" />
-                      No technical overhead
-                    </div>
-                  </div>
+                <div>
+                  <div className="font-display font-bold text-foreground">Partner Program</div>
+                  <div className="text-sm text-muted-foreground">White-label digital signage</div>
                 </div>
               </div>
+
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="bg-secondary rounded-xl p-4 text-center">
+                  <div className="text-3xl font-display font-bold text-primary mb-1">50%+</div>
+                  <div className="text-xs text-muted-foreground">Partner Discount</div>
+                </div>
+                <div className="bg-secondary rounded-xl p-4 text-center">
+                  <div className="text-3xl font-display font-bold text-primary mb-1">∞</div>
+                  <div className="text-xs text-muted-foreground">Client Accounts</div>
+                </div>
+              </div>
+
+              <ul className="space-y-2.5">
+                {["Your brand, your clients", "Full admin portal access", "No technical overhead", "Dedicated support team"].map((item) => (
+                  <li key={item} className="flex items-center gap-2.5 text-sm text-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                to="/digital-signage-software-partner-white-label/"
+                className="btn-primary mt-6 w-full flex items-center justify-center gap-2 text-sm"
+              >
+                Apply to Become a Partner <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
+          </div>
+
+          {/* Right text */}
+          <div className="order-1 lg:order-2">
+            <span className="chip mb-5">Reseller Program</span>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-5">
+              Grow Your Business with{" "}
+              <span className="text-primary">White-Label Digital Signage</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-7 leading-relaxed">
+              Offer enterprise-grade digital signage under your own brand. 
+              We handle the technology and infrastructure — you focus on winning clients and growing revenue.
+            </p>
+
+            <ul className="space-y-3">
+              {benefits.map((benefit) => (
+                <li key={benefit} className="flex items-start gap-2.5 text-sm text-foreground">
+                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  {benefit}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

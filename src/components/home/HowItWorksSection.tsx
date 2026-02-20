@@ -1,72 +1,64 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const steps = [
   {
-    number: "01",
-    title: "Choose a Template",
-    description: "Select from hundreds of professionally designed templates for menus, announcements, promotions, and more.",
-    features: ["Industry-specific designs", "Fully customizable", "Regular updates"],
+    step: "01",
+    title: "Sign Up & Connect Your Screen",
+    description: "Create a free account and install the ScreenFusion app on your device — Android TV, Fire Stick, Windows PC, or any browser. Done in under 5 minutes.",
+    features: ["Android, Windows & Linux", "No hardware required", "Instant pairing via PIN code"],
   },
   {
-    number: "02",
-    title: "Customize Your Content",
-    description: "Use our drag-and-drop editor to add your branding, images, videos, and text. No design skills required.",
-    features: ["Canva integration", "Media library", "Brand kit support"],
+    step: "02",
+    title: "Design Your Content",
+    description: "Use our drag-and-drop editor or choose from 500+ professional templates. Integrate Canva, Google Slides, YouTube, social feeds, and more.",
+    features: ["Drag & drop canvas", "500+ templates", "Canva & Google integration"],
   },
   {
-    number: "03",
-    title: "Publish to Screens",
-    description: "Send your content to all your displays with one click. Schedule updates and manage everything from the cloud.",
-    features: ["Instant updates", "Smart scheduling", "Remote management"],
+    step: "03",
+    title: "Publish & Manage Remotely",
+    description: "Push content to all your screens with one click. Schedule by day, time, or location. Monitor screens remotely from any device, anywhere.",
+    features: ["One-click publishing", "Smart scheduling", "Real-time monitoring"],
   },
 ];
 
 export const HowItWorksSection = () => {
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[128px]" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-            Get Started in{" "}
-            <span className="gradient-text">3 Simple Steps</span>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="chip mb-4">How It Works</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
+            Up and Running in{" "}
+            <span className="text-primary">3 Simple Steps</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            From signup to live screens in minutes. Our streamlined process makes 
-            digital signage accessible to everyone.
+            No technical expertise needed. Go from signup to live screens in minutes.
           </p>
         </div>
 
-        {/* Steps */}
         <div className="grid lg:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <div key={step.number} className="relative">
-              {/* Connector Line */}
+            <div key={step.step} className="relative">
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-full w-full h-px bg-gradient-to-r from-border to-transparent z-0" />
+                <div className="hidden lg:block absolute top-8 left-[calc(100%_-_16px)] w-8 h-px bg-border z-10" />
               )}
-              
               <div className="feature-card h-full">
-                {/* Step Number */}
-                <div className="text-5xl font-display font-bold gradient-text mb-4">
-                  {step.number}
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="w-10 h-10 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center flex-shrink-0">
+                    {step.step}
+                  </span>
+                  <div className="h-px flex-1 bg-border" />
                 </div>
-                
-                <h3 className="text-2xl font-display font-semibold mb-4">
+                <h3 className="text-xl font-display font-semibold text-foreground mb-3">
                   {step.title}
                 </h3>
-                
-                <p className="text-muted-foreground mb-6">
+                <p className="text-muted-foreground mb-5 text-sm leading-relaxed">
                   {step.description}
                 </p>
-                
                 <ul className="space-y-2">
                   {step.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2 text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <li key={feature} className="flex items-center gap-2 text-sm text-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                       {feature}
                     </li>
                   ))}

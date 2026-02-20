@@ -1,76 +1,148 @@
-import { ArrowRight, Play } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-screens.jpg";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-glow pt-20">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[128px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[128px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-      
-      {/* Grid Pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      />
+    <section className="pt-16 bg-white overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-64px)] py-16">
+          {/* Left: Text */}
+          <div className="stagger">
+            <div className="chip mb-5">
+              ⚡ Trusted by 10,000+ screens worldwide
+            </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto text-center stagger-children">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-8">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-sm text-muted-foreground">
-              Trusted by 10,000+ screens worldwide
-            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight mb-6">
+              Elevate Your Business{" "}
+              <span className="text-primary">With Digital Signage</span>{" "}
+              Software
+            </h1>
+
+            <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
+              Transform any screen or TV into a dynamic platform to engage customers and employees.
+              Easy setup, powerful results — manage everything from the cloud.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <a
+                href="https://manage.screenfusion.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center justify-center gap-2"
+              >
+                Try For Free
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="/contact/"
+                className="btn-outline inline-flex items-center justify-center gap-2"
+              >
+                Book a Demo
+              </a>
+            </div>
+
+            <p className="text-sm text-muted-foreground mb-6">
+              <span className="text-primary font-semibold">FREE</span> for 1 screen. No credit card required.
+            </p>
+
+            {/* Trust signals */}
+            <div className="flex flex-wrap gap-4">
+              {[
+                "No credit card required",
+                "Setup in 5 minutes",
+                "Cancel anytime",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6">
-            Transform Any Screen Into a{" "}
-            <span className="gradient-text">Powerful Display</span>
-          </h1>
+          {/* Right: Product mockup */}
+          <div className="relative lg:pl-8 animate-fade-in">
+            {/* Teal glow blob */}
+            <div className="absolute -top-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-primary/8 rounded-full blur-2xl" />
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-            Professional cloud-based digital signage software that enables you to design, 
-            schedule, and send content to any screen. Easy setup, powerful results.
-          </p>
+            {/* Main screen mockup */}
+            <div className="relative z-10 bg-foreground rounded-2xl shadow-hover overflow-hidden">
+              {/* Screen chrome */}
+              <div className="flex items-center gap-1.5 px-4 py-3 bg-foreground">
+                <div className="w-3 h-3 rounded-full opacity-70" style={{ background: 'hsl(0 80% 65%)' }} />
+                <div className="w-3 h-3 rounded-full opacity-70" style={{ background: 'hsl(45 90% 60%)' }} />
+                <div className="w-3 h-3 rounded-full opacity-70" style={{ background: 'hsl(120 50% 55%)' }} />
+                <div className="flex-1 mx-4 h-5 bg-white/10 rounded-md" />
+              </div>
+              {/* Dashboard preview */}
+              <div className="bg-secondary p-4 space-y-3">
+                {/* Top bar */}
+                <div className="bg-white rounded-lg p-3 flex items-center justify-between shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-primary/15 rounded-lg flex items-center justify-center">
+                      <div className="w-4 h-4 bg-primary rounded-sm" />
+                    </div>
+                    <div>
+                      <div className="h-3 w-28 bg-foreground/15 rounded mb-1.5" />
+                      <div className="h-2 w-20 bg-foreground/8 rounded" />
+                    </div>
+                  </div>
+                  <div className="h-7 w-20 bg-primary rounded-md" />
+                </div>
+                {/* Content grid */}
+                <div className="grid grid-cols-3 gap-2">
+                  {[...Array(6)].map((_, i) => (
+                    <div key={i} className="bg-white rounded-lg p-3 shadow-sm aspect-video flex flex-col justify-between">
+                      <div className={`h-2 w-3/4 rounded ${i % 3 === 0 ? 'bg-primary/40' : 'bg-foreground/10'}`} />
+                      <div className="space-y-1">
+                        <div className="h-1.5 w-full bg-foreground/8 rounded" />
+                        <div className="h-1.5 w-2/3 bg-foreground/8 rounded" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* App icons row */}
+                <div className="bg-white rounded-lg p-3 shadow-sm">
+                  <div className="h-2 w-24 bg-foreground/10 rounded mb-3" />
+                  <div className="flex gap-2">
+                    {[
+                      'hsl(210 80% 60%)', 'hsl(25 90% 60%)', 'hsl(162 60% 45%)',
+                      'hsl(270 60% 60%)', 'hsl(0 70% 60%)', 'hsl(45 85% 55%)'
+                    ].map((color, i) => (
+                      <div key={i} className="w-8 h-8 rounded-lg opacity-80" style={{ background: color }} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <Button className="btn-hero group" size="lg" asChild>
-              <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer">
-                Start for FREE
-                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" className="btn-ghost" asChild>
-              <a href="#demo">
-                <Play className="mr-2 w-5 h-5" />
-                Watch Demo
-              </a>
-            </Button>
+            {/* Floating stats cards */}
+            <div className="absolute -left-6 top-1/3 bg-white rounded-xl shadow-hover p-3 border border-border z-20">
+              <div className="text-xs text-muted-foreground mb-1">Screens Online</div>
+              <div className="text-2xl font-display font-bold text-foreground">2,847</div>
+              <div className="text-xs text-primary font-medium">↑ 12% this week</div>
+            </div>
+            <div className="absolute -right-4 bottom-1/4 bg-white rounded-xl shadow-hover p-3 border border-border z-20">
+              <div className="text-xs text-muted-foreground mb-1">Uptime</div>
+              <div className="text-2xl font-display font-bold text-primary">99.9%</div>
+              <div className="text-xs text-muted-foreground">Last 30 days</div>
+            </div>
           </div>
-
-          <p className="text-sm text-muted-foreground">
-            No credit card required. FREE for 1 screen!
-          </p>
         </div>
+      </div>
 
-        {/* Hero Image */}
-        <div className="mt-16 relative animate-float">
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-          <div className="gradient-border p-1">
-            <img
-              src={heroImage}
-              alt="ScreenFusion Digital Signage Control Center"
-              className="rounded-2xl w-full shadow-glow"
-            />
+      {/* Logos bar */}
+      <div className="border-t border-border bg-white py-10">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-sm text-muted-foreground mb-8 font-medium">
+            Trusted by businesses in 50+ countries
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-10 opacity-40">
+            {["McDonald's", "Marriott", "Planet Fitness", "UCLA", "Whole Foods", "Hilton"].map((brand) => (
+              <span key={brand} className="text-lg font-display font-bold text-foreground tracking-tight">
+                {brand}
+              </span>
+            ))}
           </div>
         </div>
       </div>

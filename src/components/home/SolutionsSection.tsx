@@ -1,97 +1,86 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, GraduationCap, Utensils, Store, Building2, Heart, Hotel } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const solutions = [
   {
-    icon: GraduationCap,
+    emoji: "🎓",
     title: "Education",
-    description: "Campus announcements, event schedules, and wayfinding for schools and universities.",
+    description: "Campus announcements, event schedules, cafeteria menus, and emergency alerts for schools and universities.",
     href: "/solutions/digital-signage-education/",
-    color: "from-blue-500 to-cyan-500",
   },
   {
-    icon: Utensils,
+    emoji: "🍽️",
     title: "Restaurants & Cafes",
-    description: "Digital menus, promotions, and real-time price updates to boost sales.",
+    description: "Digital menu boards, daily specials, promotions, and queue management systems to boost sales.",
     href: "/solutions/digital-signage-restaurants-cafes/",
-    color: "from-orange-500 to-red-500",
   },
   {
-    icon: Store,
+    emoji: "🛍️",
     title: "Retail",
-    description: "In-store promotions, product showcases, and dynamic advertising displays.",
+    description: "In-store promotions, product showcases, and dynamic advertising to drive foot traffic and conversions.",
     href: "/solutions/digital-signage-retail/",
-    color: "from-purple-500 to-pink-500",
   },
   {
-    icon: Building2,
-    title: "Real Estate",
-    description: "Property listings, virtual tours, and CRM-synced displays for agencies.",
-    href: "/solutions/digital-signage-real-estate/",
-    color: "from-green-500 to-emerald-500",
+    emoji: "🏢",
+    title: "Corporate",
+    description: "Internal communications, KPI dashboards, meeting room signage, and visitor management.",
+    href: "/solutions/digital-signage-corporate/",
   },
   {
-    icon: Heart,
+    emoji: "🏥",
     title: "Healthcare",
-    description: "Patient information, wayfinding, and health awareness content.",
+    description: "Patient information, wayfinding, appointment queues, and health awareness content.",
     href: "/solutions/digital-signage-healthcare/",
-    color: "from-red-500 to-rose-500",
   },
   {
-    icon: Hotel,
+    emoji: "🏨",
     title: "Hospitality",
-    description: "Guest directories, event displays, and concierge information.",
+    description: "Guest directories, event schedules, restaurant menus, and concierge information.",
     href: "/solutions/digital-signage-hospitality/",
-    color: "from-amber-500 to-yellow-500",
   },
 ];
 
 export const SolutionsSection = () => {
   return (
-    <section className="py-24 bg-card/50 relative">
+    <section className="py-20 section-alt">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-            Solutions for{" "}
-            <span className="gradient-text">Every Industry</span>
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="chip mb-4">Use Cases</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
+            Built for{" "}
+            <span className="text-primary">Every Industry</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             ScreenFusion adapts to your business needs with industry-specific features 
-            and templates designed to maximize engagement.
+            and templates designed to maximise engagement.
           </p>
         </div>
 
-        {/* Solutions Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {solutions.map((solution) => (
             <Link
               key={solution.title}
               to={solution.href}
-              className="group feature-card hover:border-primary/50"
+              className="feature-card group bg-white hover:border-primary/30"
             >
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${solution.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <solution.icon className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-display font-semibold mb-2 flex items-center gap-2">
+              <div className="text-3xl mb-4">{solution.emoji}</div>
+              <h3 className="text-lg font-display font-semibold text-foreground mb-2 flex items-center gap-2">
                 {solution.title}
-                <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                <ArrowRight className="w-4 h-4 text-primary opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {solution.description}
               </p>
             </Link>
           ))}
         </div>
 
-        {/* View All */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-10">
           <Link
             to="/solutions/"
-            className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
+            className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
           >
-            View all solutions
-            <ArrowRight className="w-4 h-4" />
+            View all solutions <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

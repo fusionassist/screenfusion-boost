@@ -1,94 +1,94 @@
-import { 
-  Zap, 
-  Shield, 
-  LayoutGrid, 
-  Cloud, 
-  Smartphone, 
-  BarChart3,
-  Clock,
-  Globe,
-  Layers
-} from "lucide-react";
+import { Zap, LayoutGrid, Shield, Cloud, Smartphone, BarChart3, Clock, Globe, Layers, Palette, Wifi, Users } from "lucide-react";
 
 const features = [
   {
     icon: Zap,
     title: "Fast & Easy Setup",
-    description: "Get your screens running in minutes. Our intuitive interface makes content management effortless.",
+    description: "Get your screens running in minutes. Our intuitive interface makes content management effortless for anyone.",
   },
   {
     icon: LayoutGrid,
-    title: "50+ Ready Apps",
-    description: "Weather, social feeds, news, and more. Integrate seamlessly with Canva, Google, and popular tools.",
+    title: "500+ Templates",
+    description: "Industry-specific templates for restaurants, retail, healthcare, and more. Fully customizable to match your brand.",
   },
   {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Bank-level encryption and secure cloud infrastructure powered by Google Cloud Platform.",
+    icon: Palette,
+    title: "Drag & Drop Designer",
+    description: "Build stunning content with our no-code canvas editor. Native Canva integration for even more design power.",
   },
   {
     icon: Cloud,
-    title: "Cloud-Based",
-    description: "Manage your screens from anywhere. All updates sync instantly across all your displays.",
+    title: "100% Cloud-Based",
+    description: "Manage all your screens from anywhere in the world. No hardware required beyond your display devices.",
   },
   {
     icon: Smartphone,
-    title: "Any Device",
-    description: "Works on Android, Windows, Linux, and web browsers. Use any screen as a digital display.",
+    title: "Works on Any Device",
+    description: "Android, Windows, Linux, Raspberry Pi, and web browsers. Turn any screen into a professional display.",
   },
   {
     icon: BarChart3,
-    title: "AI Analytics",
-    description: "Get audience insights, proof of play reports, and data-driven content optimization.",
+    title: "Analytics & Reporting",
+    description: "Proof of play reports, audience insights, and content performance data to optimise your strategy.",
   },
   {
     icon: Clock,
     title: "Smart Scheduling",
-    description: "Schedule content by time, date, or location. Automate your digital signage strategy.",
+    description: "Schedule content by time, date, or location. Automate campaigns and never manually update screens again.",
   },
   {
     icon: Globe,
-    title: "Geo-Targeting",
-    description: "Display location-specific content automatically based on where your screens are located.",
+    title: "Multi-Location",
+    description: "Manage hundreds of screens across multiple sites from a single dashboard with role-based access.",
   },
   {
     icon: Layers,
     title: "Video Walls",
-    description: "Create stunning multi-screen displays. Sync content across multiple screens seamlessly.",
+    description: "Create stunning multi-screen displays. Sync content perfectly across 2, 4, 9 or more panels.",
+  },
+  {
+    icon: Wifi,
+    title: "Offline Playback",
+    description: "Content continues playing even without internet. Screens sync automatically when connection is restored.",
+  },
+  {
+    icon: Users,
+    title: "Team Collaboration",
+    description: "Multiple user accounts with granular permissions. Let teams manage their own screens without IT overhead.",
+  },
+  {
+    icon: Shield,
+    title: "Enterprise Security",
+    description: "SOC 2 compliant with bank-level encryption. Google Cloud Platform infrastructure for reliability and scale.",
   },
 ];
 
 export const FeaturesSection = () => {
   return (
-    <section className="py-24 relative">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="chip mb-4">Features</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
             Everything You Need to{" "}
-            <span className="gradient-text">Power Your Screens</span>
+            <span className="text-primary">Power Your Screens</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            From quick setup to advanced analytics, ScreenFusion provides all the tools 
-            you need to create engaging digital signage experiences.
+            From quick setup to advanced analytics, ScreenFusion gives you all the tools to create 
+            engaging digital signage experiences at any scale.
           </p>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="feature-card group"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <feature.icon className="w-6 h-6 text-primary-foreground" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {features.map((feature) => (
+            <div key={feature.title} className="feature-card group">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <feature.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-xl font-display font-semibold mb-2">
+              <h3 className="text-base font-display font-semibold text-foreground mb-2">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
             </div>

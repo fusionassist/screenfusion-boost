@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Monitor, Mail, Linkedin, Twitter, Youtube, Facebook } from "lucide-react";
+import { Mail, Linkedin, Twitter, Youtube, Facebook } from "lucide-react";
+import logoWhite from "@/assets/logo-white.png";
 
 const solutions = [
   { name: "Education", href: "/solutions/digital-signage-education/" },
@@ -32,13 +33,8 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4 lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <Monitor className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-lg font-display font-bold text-white">
-                Screen<span className="text-primary">Fusion</span>
-              </span>
+            <Link to="/" className="flex items-center mb-4">
+              <img src={logoWhite} alt="ScreenFusion" className="h-12 w-auto" />
             </Link>
             <p className="text-white/60 text-sm mb-5 max-w-xs leading-relaxed">
               Professional cloud-based digital signage software. Design, schedule, and manage content on any screen from anywhere.

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Monitor } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoHorizontal from "@/assets/logo-horizontal.png";
 
 const solutions = [
   { title: "Education", href: "/solutions/digital-signage-education/", description: "Campus announcements & schedules" },
@@ -50,13 +51,8 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <Monitor className="w-4 h-4 text-white" />
-            </div>
-            <span className="text-lg font-display font-bold text-foreground">
-              Screen<span className="text-primary">Fusion</span>
-            </span>
+          <Link to="/" className="flex items-center flex-shrink-0">
+            <img src={logoHorizontal} alt="ScreenFusion" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Nav */}

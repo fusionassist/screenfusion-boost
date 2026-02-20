@@ -11,31 +11,31 @@ const solutions = [
   {
     emoji: "🍽️",
     title: "Restaurants & Cafes",
-    description: "Digital menu boards, daily specials, promotions, and queue management systems to boost sales.",
+    description: "Dynamic digital menu boards and promotional displays. Update prices and specials in real-time to boost sales.",
     href: "/solutions/digital-signage-restaurants-cafes/",
   },
   {
     emoji: "🛍️",
     title: "Retail",
-    description: "In-store promotions, product showcases, and dynamic advertising to drive foot traffic and conversions.",
+    description: "Transform retail spaces with eye-catching displays that showcase products and drive customer engagement.",
     href: "/solutions/digital-signage-retail/",
   },
   {
     emoji: "🏢",
-    title: "Corporate",
-    description: "Internal communications, KPI dashboards, meeting room signage, and visitor management.",
-    href: "/solutions/digital-signage-corporate/",
+    title: "Real Estate",
+    description: "Showcase properties with stunning digital displays. Sync with top CRMs for automatic listing updates.",
+    href: "/solutions/digital-signage-real-estate/",
   },
   {
     emoji: "🏥",
     title: "Healthcare",
-    description: "Patient information, wayfinding, appointment queues, and health awareness content.",
+    description: "Patient information, wayfinding, appointment queues, and health awareness content for hospitals and clinics.",
     href: "/solutions/digital-signage-healthcare/",
   },
   {
     emoji: "🏨",
     title: "Hospitality",
-    description: "Guest directories, event schedules, restaurant menus, and concierge information.",
+    description: "Elevate guest experiences with digital directories, event displays, and concierge information.",
     href: "/solutions/digital-signage-hospitality/",
   },
 ];
@@ -51,7 +51,7 @@ export const SolutionsSection = () => {
             <span className="text-primary">Every Industry</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            ScreenFusion adapts to your business needs with industry-specific features 
+            Screen Fusion adapts to your business needs with industry-specific features 
             and templates designed to maximise engagement.
           </p>
         </div>

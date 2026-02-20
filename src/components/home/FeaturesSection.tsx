@@ -1,65 +1,65 @@
-import { Zap, LayoutGrid, Shield, Cloud, Smartphone, BarChart3, Clock, Globe, Layers, Palette, Wifi, Users } from "lucide-react";
+import { Zap, LayoutGrid, Cloud, Smartphone, BarChart3, Clock, Globe, Wifi, Users, MapPin, Layers, RefreshCw } from "lucide-react";
 
 const features = [
   {
-    icon: Zap,
-    title: "Fast & Easy Setup",
-    description: "Get your screens running in minutes. Our intuitive interface makes content management effortless for anyone.",
+    icon: Clock,
+    title: "Content Scheduling",
+    description: "Scheduling your content has never been easier. Our playlist feature lets you create and manage multiple playlists to be played when it suits your business.",
   },
   {
     icon: LayoutGrid,
-    title: "500+ Templates",
-    description: "Industry-specific templates for restaurants, retail, healthcare, and more. Fully customizable to match your brand.",
+    title: "Customisable Templates",
+    description: "Use our template library to select the content you want and edit it to your style, all within your dashboard.",
   },
   {
-    icon: Palette,
-    title: "Drag & Drop Designer",
-    description: "Build stunning content with our no-code canvas editor. Native Canva integration for even more design power.",
+    icon: Zap,
+    title: "Built-in Apps",
+    description: "Choose from a variety of apps like Canva, YouTube, news, and more to reach full potential from your signage with ease.",
   },
   {
     icon: Cloud,
-    title: "100% Cloud-Based",
-    description: "Manage all your screens from anywhere in the world. No hardware required beyond your display devices.",
+    title: "Quick Setup",
+    description: "Screen Fusion is quick and simple to set up. You can get content on your screens in minutes so you can focus more on your business.",
   },
   {
-    icon: Smartphone,
-    title: "Works on Any Device",
-    description: "Android, Windows, Linux, Raspberry Pi, and web browsers. Turn any screen into a professional display.",
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics & Reporting",
-    description: "Proof of play reports, audience insights, and content performance data to optimise your strategy.",
-  },
-  {
-    icon: Clock,
-    title: "Smart Scheduling",
-    description: "Schedule content by time, date, or location. Automate campaigns and never manually update screens again.",
+    icon: RefreshCw,
+    title: "Instant Updates",
+    description: "Update your content with ease, on desktop or with our mobile app, to ensure your signage is always relevant.",
   },
   {
     icon: Globe,
-    title: "Multi-Location",
-    description: "Manage hundreds of screens across multiple sites from a single dashboard with role-based access.",
+    title: "Reliability",
+    description: "Our platform prioritises the safety and accessibility of user data and content, offering you complete control.",
+  },
+  {
+    icon: BarChart3,
+    title: "AI Analytics",
+    description: "Gain insights into customer behaviour, streamline operations, and enhance performance with AI-powered queue analysis and staff-customer engagement tracking.",
+  },
+  {
+    icon: MapPin,
+    title: "Geo-Location",
+    description: "Automatically update content based on the device's location. Set geographic zones to personalise what plays where.",
+  },
+  {
+    icon: Smartphone,
+    title: "Multi-Platform Support",
+    description: "Compatible with Android OS 5+, Amazon FireTV, WebOS Signage, Windows, Linux, Raspberry Pi, and web-based players.",
   },
   {
     icon: Layers,
     title: "Video Walls",
-    description: "Create stunning multi-screen displays. Sync content perfectly across 2, 4, 9 or more panels.",
+    description: "Create stunning multi-screen displays by syncing multiple screens to form one large, dynamic canvas.",
   },
   {
     icon: Wifi,
     title: "Offline Playback",
-    description: "Content continues playing even without internet. Screens sync automatically when connection is restored.",
+    description: "Content continues playing even without internet. Screens sync automatically when the connection is restored.",
   },
   {
     icon: Users,
-    title: "Team Collaboration",
-    description: "Multiple user accounts with granular permissions. Let teams manage their own screens without IT overhead.",
-  },
-  {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "SOC 2 compliant with bank-level encryption. Google Cloud Platform infrastructure for reliability and scale.",
+    title: "Team Management",
+    description: "Multiple account managers, team roles, and granular permissions. Let teams manage their own screens independently.",
   },
 ];
 
@@ -70,12 +70,12 @@ export const FeaturesSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="chip mb-4">Features</span>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-            Everything You Need to{" "}
-            <span className="text-primary">Power Your Screens</span>
+            All the Features You Want.{" "}
+            <span className="text-primary">Simple to Manage.</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            From quick setup to advanced analytics, ScreenFusion gives you all the tools to create 
-            engaging digital signage experiences at any scale.
+            Screen Fusion makes it easy to build and manage your digital signage. 
+            From scheduling to AI analytics — everything is built in.
           </p>
         </div>
 
@@ -93,6 +93,17 @@ export const FeaturesSection = () => {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <a
+            href="https://app.screenfusion.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            Try It Free
+          </a>
         </div>
       </div>
     </section>

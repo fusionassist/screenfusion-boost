@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 const benefits = [
-  "Significant volume discounts — up to 50% off",
-  "White-label with your brand, URL & logo",
-  "Full admin portal to manage client accounts",
-  "Priority technical support & onboarding",
+  "Significant volume discounts on screen licenses",
+  "White-label with your own brand, URL & logo",
+  "Full admin portal to manage all client accounts",
+  "Priority technical support & onboarding assistance",
   "Free software updates for all your clients",
-  "Co-marketing & sales material support",
   "Dedicated partner success manager",
   "API access for custom integrations",
+  "Co-marketing and sales material support",
 ];
 
 export const ResellerSection = () => {
@@ -32,12 +32,12 @@ export const ResellerSection = () => {
 
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-secondary rounded-xl p-4 text-center">
-                  <div className="text-3xl font-display font-bold text-primary mb-1">50%+</div>
-                  <div className="text-xs text-muted-foreground">Partner Discount</div>
-                </div>
-                <div className="bg-secondary rounded-xl p-4 text-center">
                   <div className="text-3xl font-display font-bold text-primary mb-1">∞</div>
                   <div className="text-xs text-muted-foreground">Client Accounts</div>
+                </div>
+                <div className="bg-secondary rounded-xl p-4 text-center">
+                  <div className="text-3xl font-display font-bold text-primary mb-1">100%</div>
+                  <div className="text-xs text-muted-foreground">Your Branding</div>
                 </div>
               </div>
 

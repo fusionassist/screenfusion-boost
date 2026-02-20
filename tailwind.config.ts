@@ -49,8 +49,10 @@ export default {
         },
         sf: {
           navy: "hsl(var(--sf-navy))",
-          teal: "hsl(var(--sf-teal))",
-          "teal-light": "hsl(var(--sf-teal-light))",
+          magenta: "hsl(var(--sf-magenta))",
+          coral: "hsl(var(--sf-coral))",
+          purple: "hsl(var(--sf-purple))",
+          "pink-light": "hsl(var(--sf-pink-light))",
           "grey-light": "hsl(var(--sf-grey-light))",
           "grey-mid": "hsl(var(--sf-grey-mid))",
         },

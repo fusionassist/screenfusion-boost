@@ -3,21 +3,21 @@ import { CheckCircle } from "lucide-react";
 const steps = [
   {
     step: "01",
-    title: "Sign Up & Connect Your Screen",
-    description: "Create a free account and install the ScreenFusion app on your device — Android TV, Fire Stick, Windows PC, or any browser. Done in under 5 minutes.",
-    features: ["Android, Windows & Linux", "No hardware required", "Instant pairing via PIN code"],
+    title: "Sign Up",
+    description: "Signing up is simple — just create an account with us and start creating your content. Free 14-day trial for new customers, no credit card required.",
+    features: ["Instant account creation", "14-day free trial", "No credit card needed"],
   },
   {
     step: "02",
-    title: "Design Your Content",
-    description: "Use our drag-and-drop editor or choose from 500+ professional templates. Integrate Canva, Google Slides, YouTube, social feeds, and more.",
-    features: ["Drag & drop canvas", "500+ templates", "Canva & Google integration"],
+    title: "Create Playlists",
+    description: "Creating a playlist with Screen Fusion lets you create and manage playlists that play when you schedule it. Use templates or our built-in apps like Canva and YouTube.",
+    features: ["Drag & drop editor", "500+ templates", "Canva & app integrations"],
   },
   {
     step: "03",
-    title: "Publish & Manage Remotely",
-    description: "Push content to all your screens with one click. Schedule by day, time, or location. Monitor screens remotely from any device, anywhere.",
-    features: ["One-click publishing", "Smart scheduling", "Real-time monitoring"],
+    title: "Display Your Content",
+    description: "Manage your content with ease and update in real time to ensure you get the most out of your screens. Control everything from desktop or our mobile app.",
+    features: ["One-click publishing", "Real-time updates", "Mobile app control"],
   },
 ];
 
@@ -28,8 +28,8 @@ export const HowItWorksSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="chip mb-4">How It Works</span>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-            Up and Running in{" "}
-            <span className="text-primary">3 Simple Steps</span>
+            Screen Fusion is{" "}
+            <span className="text-primary">Simple.</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             No technical expertise needed. Go from signup to live screens in minutes.

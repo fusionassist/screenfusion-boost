@@ -1,7 +1,7 @@
 const stats = [
-  { value: "10,000+", label: "Screens Powered" },
+  { value: "14 Days", label: "Free Trial" },
   { value: "50+", label: "Countries" },
-  { value: "99.9%", label: "Uptime SLA" },
+  { value: "99.9%", label: "Uptime" },
   { value: "5 min", label: "Average Setup" },
 ];
 

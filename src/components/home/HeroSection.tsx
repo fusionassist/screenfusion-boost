@@ -8,47 +8,45 @@ export const HeroSection = () => {
           {/* Left: Text */}
           <div className="stagger">
             <div className="chip mb-5">
-              ⚡ Trusted by 10,000+ screens worldwide
+              ⚡ Cloud Based Digital Signage
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight mb-6">
-              Elevate Your Business{" "}
-              <span className="text-primary">With Digital Signage</span>{" "}
-              Software
+              Manage Your Content{" "}
+              <span className="text-primary">With Ease</span>
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              Transform any screen or TV into a dynamic platform to engage customers and employees.
-              Easy setup, powerful results — manage everything from the cloud.
+              Screen Fusion is a cloud based signage software solution. Transform any screen into a dynamic digital display — manage everything remotely from your desktop or mobile app.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <a
-                href="https://manage.screenfusion.ai"
+                href="https://app.screenfusion.ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center justify-center gap-2"
               >
-                Try For Free
+                Try It Free
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="/contact/"
+                href="/how-it-works/"
                 className="btn-outline inline-flex items-center justify-center gap-2"
               >
-                Book a Demo
+                How It Works
               </a>
             </div>
 
             <p className="text-sm text-muted-foreground mb-6">
-              <span className="text-primary font-semibold">FREE</span> for 1 screen. No credit card required.
+              Free <span className="text-primary font-semibold">14-day trial</span> for new customers. No credit card required.
             </p>
 
             {/* Trust signals */}
             <div className="flex flex-wrap gap-4">
               {[
-                "No credit card required",
-                "Setup in 5 minutes",
+                "Easy Setup",
+                "Cloud Included",
                 "Cancel anytime",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-1.5 text-sm text-muted-foreground">
@@ -135,11 +133,11 @@ export const HeroSection = () => {
       <div className="border-t border-border bg-white py-10">
         <div className="container mx-auto px-4">
           <p className="text-center text-sm text-muted-foreground mb-8 font-medium">
-            Trusted by businesses in 50+ countries
+            Compatible with all major platforms & devices
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-10 opacity-40">
-            {["McDonald's", "Marriott", "Planet Fitness", "UCLA", "Whole Foods", "Hilton"].map((brand) => (
-              <span key={brand} className="text-lg font-display font-bold text-foreground tracking-tight">
+          <div className="flex flex-wrap items-center justify-center gap-6 opacity-50">
+            {["LG", "Google", "Android", "Amazon Fire TV", "Windows", "Raspberry Pi"].map((brand) => (
+              <span key={brand} className="text-sm font-display font-bold text-foreground tracking-tight uppercase px-3 py-1.5 border border-border rounded-md">
                 {brand}
               </span>
             ))}

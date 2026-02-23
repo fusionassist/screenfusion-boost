@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logoHorizontal from "@/assets/logo-horizontal.png";
 
@@ -25,6 +25,34 @@ const featuresNav = [
   { title: "Audience Targeting", href: "/solutions/ai-digital-signage-audience-targeting/", description: "Smart targeted ads with AI" },
   { title: "All Features →", href: "/digital-signage-features/", description: "" },
 ];
+
+const languages = [
+  { code: "en", label: "English" },
+  { code: "zh-CN", label: "中文" },
+  { code: "es", label: "Español" },
+  { code: "ar", label: "عربى" },
+  { code: "pt", label: "Português" },
+  { code: "ru", label: "русский" },
+  { code: "de", label: "Deutsch" },
+  { code: "tr", label: "Türkçe" },
+  { code: "fr", label: "Français" },
+  { code: "it", label: "Italiano" },
+  { code: "pl", label: "Polski" },
+  { code: "nl", label: "Nederlands" },
+  { code: "hu", label: "Magyar" },
+  { code: "el", label: "ελληνικά" },
+  { code: "sv", label: "Svenska" },
+  { code: "hr", label: "Hrvatski" },
+  { code: "ja", label: "日本語" },
+];
+
+const triggerGoogleTranslate = (langCode: string) => {
+  const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+  if (select) {
+    select.value = langCode;
+    select.dispatchEvent(new Event('change'));
+  }
+};
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -125,8 +153,36 @@ export const Header = () => {
             </Link>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons + Language */}
           <div className="hidden lg:flex items-center gap-2">
+            {/* Language Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenDropdown("language")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className="flex items-center gap-1 px-2 py-2 text-sm text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
+                <Globe className="w-4 h-4" />
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              {openDropdown === "language" && (
+                <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-xl border border-border shadow-hover p-1.5 animate-fade-in max-h-80 overflow-y-auto">
+                  <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider px-2.5 py-1.5">17 Languages</p>
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        triggerGoogleTranslate(lang.code);
+                        setOpenDropdown(null);
+                      }}
+                      className="w-full text-left px-2.5 py-2 rounded-lg text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
             <a
               href="https://manage.screenfusion.ai"
               target="_blank"
@@ -144,6 +200,9 @@ export const Header = () => {
               Try For Free
             </a>
           </div>
+
+          {/* Hidden Google Translate Element */}
+          <div id="google_translate_element" />
 
           {/* Mobile Hamburger */}
           <button

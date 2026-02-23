@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { Check, ArrowRight, HelpCircle } from "lucide-react";
+import { Check, ArrowRight, HelpCircle, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -185,6 +185,28 @@ const Pricing = () => {
             >
               Ask a Question
               <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Download App */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
+              Download the App
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Get the ScreenFusion Android app to turn any Android device into a digital signage player.
+            </p>
+            <a
+              href="/downloads/Screenfusion_244.apk"
+              download
+              className="btn-hero inline-flex items-center gap-2"
+            >
+              <Download className="w-5 h-5" />
+              Download Android App (.apk)
             </a>
           </div>
         </div>

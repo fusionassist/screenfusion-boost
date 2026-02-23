@@ -1,6 +1,6 @@
+import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Check, ArrowRight, HelpCircle, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionContent,
@@ -8,7 +8,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const plans = [
+type CurrencyCode = "EUR" | "USD" | "GBP" | "AUD" | "CAD" | "CHF" | "SEK" | "PLN" | "BRL" | "TRY" | "JPY";
+
+interface CurrencyInfo {
+  symbol: string;
+  label: string;
+  rate: number;
+  decimals: number;
+}
+
+const currencies: Record<CurrencyCode, CurrencyInfo> = {
+  EUR: { symbol: "€", label: "Euro (€)", rate: 1, decimals: 2 },
+  USD: { symbol: "$", label: "US Dollar ($)", rate: 1.08, decimals: 2 },
+  GBP: { symbol: "£", label: "British Pound (£)", rate: 0.86, decimals: 2 },
+  AUD: { symbol: "A$", label: "Australian Dollar (A$)", rate: 1.67, decimals: 2 },
+  CAD: { symbol: "C$", label: "Canadian Dollar (C$)", rate: 1.48, decimals: 2 },
+  CHF: { symbol: "CHF", label: "Swiss Franc (CHF)", rate: 0.96, decimals: 2 },
+  SEK: { symbol: "kr", label: "Swedish Krona (kr)", rate: 11.2, decimals: 0 },
+  PLN: { symbol: "zł", label: "Polish Złoty (zł)", rate: 4.32, decimals: 2 },
+  BRL: { symbol: "R$", label: "Brazilian Real (R$)", rate: 5.45, decimals: 2 },
+  TRY: { symbol: "₺", label: "Turkish Lira (₺)", rate: 34.5, decimals: 0 },
+  JPY: { symbol: "¥", label: "Japanese Yen (¥)", rate: 163, decimals: 0 },
+};
+
+const basePrices = { pro: 13.99, business: 168 };
+
+const formatPrice = (eurAmount: number, currency: CurrencyCode): string => {
+  const c = currencies[currency];
+  const converted = eurAmount * c.rate;
+  return `${c.symbol}${converted.toFixed(c.decimals)}`;
+};
+
+const getPlans = (currency: CurrencyCode) => [
   {
     name: "Trial",
     description: "14 day trial — try all features free",
@@ -27,7 +58,7 @@ const plans = [
   {
     name: "Pro",
     description: "Full access — everything you need",
-    price: "€13.99",
+    price: formatPrice(basePrices.pro, currency),
     period: "per screen / month",
     badge: "Most Popular",
     features: [
@@ -46,7 +77,7 @@ const plans = [
   {
     name: "Business",
     description: "Annual plan — best value",
-    price: "€168",
+    price: formatPrice(basePrices.business, currency),
     period: "per screen / annually",
     badge: "1 Month Free",
     features: [
@@ -89,6 +120,9 @@ const faqs = [
 ];
 
 const Pricing = () => {
+  const [currency, setCurrency] = useState<CurrencyCode>("EUR");
+  const currentPlans = getPlans(currency);
+
   return (
     <Layout>
       {/* Hero */}
@@ -107,11 +141,44 @@ const Pricing = () => {
         </div>
       </section>
 
+      {/* Currency Selector */}
+      <section className="pt-12 pb-4 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center gap-2">
+            <div className="flex items-center gap-3 flex-wrap justify-center">
+              <span className="text-sm font-medium text-muted-foreground">Currency:</span>
+              <select
+                value={currency}
+                onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
+                className="px-3 py-2 text-sm rounded-lg border border-border bg-white text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30"
+              >
+                {(Object.keys(currencies) as CurrencyCode[]).map((code) => (
+                  <option key={code} value={code}>{currencies[code].label}</option>
+                ))}
+              </select>
+            </div>
+            {currency !== "EUR" && (
+              <p className="text-xs text-muted-foreground">
+                Approximate conversion · Base price in EUR ·{" "}
+                <a
+                  href="https://www.xe.com/currencyconverter/convert/?From=EUR&To=${currency}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  View live rates →
+                </a>
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Cards */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {plans.map((plan) => (
+            {currentPlans.map((plan) => (
               <div
                 key={plan.name}
                 className={`relative feature-card flex flex-col ${

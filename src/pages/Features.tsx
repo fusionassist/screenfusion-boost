@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { 
   Monitor,
+  Target,
   Layers,
   Clock,
   MapPin,
@@ -58,6 +59,12 @@ const features = [
     title: "AI Analytics",
     description: "AI-powered audience insights, face detection, demographics, and GDPR-compliant viewer analytics.",
     href: "/solutions/ai-digital-signage-analytics/",
+  },
+  {
+    icon: Target,
+    title: "Audience Targeting",
+    description: "Smart targeted ads using AI face detection to show the right content to the right people.",
+    href: "/solutions/ai-digital-signage-audience-targeting/",
   },
   {
     icon: Smartphone,

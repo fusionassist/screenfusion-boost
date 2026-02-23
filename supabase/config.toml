@@ -1,1 +1,4 @@
 project_id = "fbajzqelzmwffgzkvffh"
+
+[functions.create-hardware-checkout]
+verify_jwt = false

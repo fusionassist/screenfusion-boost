@@ -57,61 +57,22 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right: Product mockup */}
+          {/* Right: Product video */}
           <div className="relative lg:pl-8 animate-fade-in">
-            {/* Teal glow blob */}
             <div className="absolute -top-8 -right-8 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-primary/8 rounded-full blur-2xl" />
 
-            {/* Main screen mockup */}
-            <div className="relative z-10 bg-foreground rounded-2xl shadow-hover overflow-hidden">
-              {/* Screen chrome */}
-              <div className="flex items-center gap-1.5 px-4 py-3 bg-foreground">
-                <div className="w-3 h-3 rounded-full opacity-70" style={{ background: 'hsl(0 80% 65%)' }} />
-                <div className="w-3 h-3 rounded-full opacity-70" style={{ background: 'hsl(45 90% 60%)' }} />
-                <div className="w-3 h-3 rounded-full opacity-70" style={{ background: 'hsl(120 50% 55%)' }} />
-                <div className="flex-1 mx-4 h-5 bg-white/10 rounded-md" />
-              </div>
-              {/* Dashboard preview */}
-              <div className="bg-secondary p-4 space-y-3">
-                {/* Top bar */}
-                <div className="bg-white rounded-lg p-3 flex items-center justify-between shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-primary/15 rounded-lg flex items-center justify-center">
-                      <div className="w-4 h-4 bg-primary rounded-sm" />
-                    </div>
-                    <div>
-                      <div className="h-3 w-28 bg-foreground/15 rounded mb-1.5" />
-                      <div className="h-2 w-20 bg-foreground/8 rounded" />
-                    </div>
-                  </div>
-                  <div className="h-7 w-20 bg-primary rounded-md" />
-                </div>
-                {/* Content grid */}
-                <div className="grid grid-cols-3 gap-2">
-                  {[...Array(6)].map((_, i) => (
-                    <div key={i} className="bg-white rounded-lg p-3 shadow-sm aspect-video flex flex-col justify-between">
-                      <div className={`h-2 w-3/4 rounded ${i % 3 === 0 ? 'bg-primary/40' : 'bg-foreground/10'}`} />
-                      <div className="space-y-1">
-                        <div className="h-1.5 w-full bg-foreground/8 rounded" />
-                        <div className="h-1.5 w-2/3 bg-foreground/8 rounded" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                {/* App icons row */}
-                <div className="bg-white rounded-lg p-3 shadow-sm">
-                  <div className="h-2 w-24 bg-foreground/10 rounded mb-3" />
-                  <div className="flex gap-2">
-                    {[
-                      'hsl(210 80% 60%)', 'hsl(25 90% 60%)', 'hsl(162 60% 45%)',
-                      'hsl(270 60% 60%)', 'hsl(0 70% 60%)', 'hsl(45 85% 55%)'
-                    ].map((color, i) => (
-                      <div key={i} className="w-8 h-8 rounded-lg opacity-80" style={{ background: color }} />
-                    ))}
-                  </div>
-                </div>
-              </div>
+            <div className="relative z-10 rounded-2xl shadow-hover overflow-hidden">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto rounded-2xl"
+                poster=""
+              >
+                <source src="https://screenfusion.ai/wp-content/uploads/2025/02/screenfusion-digital-signage.mp4" type="video/mp4" />
+              </video>
             </div>
 
             {/* Floating stats cards */}

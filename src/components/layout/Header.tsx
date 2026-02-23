@@ -21,6 +21,7 @@ const featuresNav = [
   { title: "Templates", href: "/digital-signage-features/templates/", description: "500+ professional templates" },
   { title: "Video Wall", href: "/digital-signage-features/video-wall/", description: "Multi-screen displays" },
   { title: "Analytics", href: "/digital-signage-features/analytics/", description: "Proof of play & insights" },
+  { title: "AI Analytics", href: "/solutions/ai-digital-signage-analytics/", description: "AI-powered audience insights" },
   { title: "All Features →", href: "/digital-signage-features/", description: "" },
 ];
 

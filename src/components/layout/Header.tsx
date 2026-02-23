@@ -22,6 +22,7 @@ const featuresNav = [
   { title: "Video Wall", href: "/digital-signage-features/video-wall/", description: "Multi-screen displays" },
   { title: "Analytics", href: "/digital-signage-features/analytics/", description: "Proof of play & insights" },
   { title: "AI Analytics", href: "/solutions/ai-digital-signage-analytics/", description: "AI-powered audience insights" },
+  { title: "Audience Targeting", href: "/solutions/ai-digital-signage-audience-targeting/", description: "Smart targeted ads with AI" },
   { title: "All Features →", href: "/digital-signage-features/", description: "" },
 ];
 

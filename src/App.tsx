@@ -14,6 +14,7 @@ import Apps from "./pages/Apps";
 import Hardware from "./pages/Hardware";
 import HowItWorks from "./pages/HowItWorks";
 import AIAnalytics from "./pages/AIAnalytics";
+import AudienceTargeting from "./pages/AudienceTargeting";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/digital-signage-player/" element={<Hardware />} />
           <Route path="/how-it-works/" element={<HowItWorks />} />
           <Route path="/solutions/ai-digital-signage-analytics/" element={<AIAnalytics />} />
+          <Route path="/solutions/ai-digital-signage-audience-targeting/" element={<AudienceTargeting />} />
           
           {/* Catch-all for 404 */}
           <Route path="*" element={<NotFound />} />

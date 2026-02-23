@@ -151,6 +151,9 @@ export const Header = () => {
             <Link to="/digital-signage-player/" className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
               Hardware
             </Link>
+            <Link to="/shop/" className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
+              Shop
+            </Link>
           </div>
 
           {/* CTA Buttons + Language */}

@@ -15,6 +15,8 @@ import Hardware from "./pages/Hardware";
 import HowItWorks from "./pages/HowItWorks";
 import AIAnalytics from "./pages/AIAnalytics";
 import AudienceTargeting from "./pages/AudienceTargeting";
+import Shop from "./pages/Shop";
+import ShopSuccess from "./pages/ShopSuccess";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +42,8 @@ const App = () => (
           <Route path="/how-it-works/" element={<HowItWorks />} />
           <Route path="/solutions/ai-digital-signage-analytics/" element={<AIAnalytics />} />
           <Route path="/solutions/ai-digital-signage-audience-targeting/" element={<AudienceTargeting />} />
+          <Route path="/shop/" element={<Shop />} />
+          <Route path="/shop/success" element={<ShopSuccess />} />
           
           {/* Catch-all for 404 */}
           <Route path="*" element={<NotFound />} />

@@ -119,6 +119,20 @@ const AudienceTargeting = () => {
               </a>
             </Button>
           </div>
+
+          {/* Hero Video */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <div className="rounded-xl overflow-hidden border border-border shadow-lg">
+              <video
+                src="/videos/audience-target-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -199,8 +213,30 @@ const AudienceTargeting = () => {
         </div>
       </section>
 
-      {/* Deep Dive Sections */}
+      {/* Video Showcase */}
       <section className="py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-center mb-4">
+            See Audience Targeting in Action
+          </h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+            Watch how ScreenFusion identifies viewer demographics and delivers targeted content in real time.
+          </p>
+          <div className="rounded-xl overflow-hidden border border-border shadow-lg">
+            <video
+              src="/videos/digital-signage-audience-target.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Deep Dive Sections */}
+      <section className="py-16 bg-card/50">
         <div className="container mx-auto px-4 space-y-20 max-w-4xl">
           {/* Audience Targeting */}
           <div>

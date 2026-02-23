@@ -119,45 +119,29 @@ const Hardware = () => {
         </div>
       </section>
 
-      {/* Featured Player */}
-      <section className="py-16 bg-card/50">
+      {/* Supported Hardware Logos */}
+      <section className="py-12 bg-card/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="gradient-border p-1 rounded-3xl">
-              <div className="bg-card rounded-3xl p-8 md:p-12">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  <div className="w-24 h-24 rounded-2xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                    <Tv className="w-12 h-12 text-primary-foreground" />
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                      <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                      <span className="text-sm text-yellow-500 font-medium">Recommended</span>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
-                      ScreenFusion Player
-                    </h2>
-                    <p className="text-muted-foreground mb-4">
-                      Our purpose-built media player delivers 4K content reliably with enterprise features. 
-                      Pre-configured and ready to connect — just plug in and start displaying.
-                    </p>
-                    <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-6">
-                      {["4K UHD", "Android 12", "Fanless", "Remote Update"].map((tag) => (
-                        <span key={tag} className="px-3 py-1 text-sm bg-secondary/50 rounded-full">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <Button className="btn-hero" asChild>
-                      <Link to="/contact/">
-                        Get Pricing
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
+          <h2 className="text-lg font-medium text-muted-foreground text-center mb-8">
+            Compatible with all major platforms
+          </h2>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 max-w-4xl mx-auto">
+            {[
+              { name: "Android", icon: Smartphone },
+              { name: "Windows", icon: Monitor },
+              { name: "Linux", icon: Laptop },
+              { name: "Chrome", icon: Monitor },
+              { name: "Samsung", icon: Tv },
+              { name: "LG", icon: Tv },
+              { name: "BrightSign", icon: Tv },
+              { name: "Fire TV", icon: Tv },
+              { name: "Raspberry Pi", icon: Laptop },
+            ].map((platform) => (
+              <div key={platform.name} className="flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
+                <platform.icon className="w-8 h-8 text-muted-foreground" />
+                <span className="text-sm text-muted-foreground font-medium">{platform.name}</span>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -216,8 +200,51 @@ const Hardware = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Featured Player */}
       <section className="py-16 bg-card/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="gradient-border p-1 rounded-3xl">
+              <div className="bg-card rounded-3xl p-8 md:p-12">
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  <div className="w-24 h-24 rounded-2xl bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                    <Tv className="w-12 h-12 text-primary-foreground" />
+                  </div>
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                      <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+                      <span className="text-sm text-yellow-500 font-medium">Recommended</span>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
+                      ScreenFusion Player
+                    </h2>
+                    <p className="text-muted-foreground mb-4">
+                      Our purpose-built media player delivers 4K content reliably with enterprise features. 
+                      Pre-configured and ready to connect — just plug in and start displaying.
+                    </p>
+                    <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-6">
+                      {["4K UHD", "Android 12", "Fanless", "Remote Update"].map((tag) => (
+                        <span key={tag} className="px-3 py-1 text-sm bg-secondary/50 rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <Button className="btn-hero" asChild>
+                      <Link to="/contact/">
+                        Get Pricing
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
             Not sure which player to choose?

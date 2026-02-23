@@ -115,10 +115,10 @@ const Reseller = () => {
 
               <div className="bg-secondary/50 rounded-xl p-4 mb-6 text-center">
                 <div className="text-4xl font-display font-bold gradient-text mb-1">
-                  50%+
+                  Custom Pricing
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Discount on all plans
+                  Tailored to your business
                 </p>
               </div>
 

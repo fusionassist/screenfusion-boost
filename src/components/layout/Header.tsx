@@ -237,7 +237,26 @@ export const Header = () => {
               <Link to="/pricing/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Pricing</Link>
               <Link to="/apps/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Apps</Link>
               <Link to="/digital-signage-player/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Hardware</Link>
+              <Link to="/shop/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Shop</Link>
               <Link to="/how-it-works/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">How It Works</Link>
+            </div>
+            {/* Mobile Language Selector */}
+            <div className="border-t border-border mt-2 pt-3">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide px-3 pb-2">Language</p>
+              <div className="grid grid-cols-3 gap-1">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      triggerGoogleTranslate(lang.code);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="px-2 py-1.5 rounded-lg text-xs text-foreground hover:bg-secondary hover:text-primary transition-colors text-left"
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
             </div>
             <div className="border-t border-border mt-2 pt-3 flex flex-col gap-2">
               <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-center rounded-lg border border-border text-sm font-semibold text-foreground hover:bg-secondary transition-colors">

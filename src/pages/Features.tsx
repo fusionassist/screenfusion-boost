@@ -49,9 +49,15 @@ const features = [
   },
   {
     icon: BarChart3,
-    title: "AI Analytics",
-    description: "Get audience insights, proof of play reports, and AI-powered content optimization.",
+    title: "Analytics",
+    description: "Get proof of play reports and content performance insights.",
     href: "/digital-signage-features/analytics/",
+  },
+  {
+    icon: BarChart3,
+    title: "AI Analytics",
+    description: "AI-powered audience insights, face detection, demographics, and GDPR-compliant viewer analytics.",
+    href: "/solutions/ai-digital-signage-analytics/",
   },
   {
     icon: Smartphone,

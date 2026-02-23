@@ -16,6 +16,32 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const appIcons = [
+  { name: "Canva", src: "/images/apps/canva.svg" },
+  { name: "Twitter / X", src: "/images/apps/x-twitter.png" },
+  { name: "Google Drive", src: "/images/apps/google-drive.png" },
+  { name: "Google Calendar", src: "/images/apps/google-calendar.png" },
+  { name: "Google Docs", src: "/images/apps/google-docs.png" },
+  { name: "Google Sheets", src: "/images/apps/google-sheets.png" },
+  { name: "Google Slides", src: "/images/apps/google-slides.png" },
+  { name: "YouTube", src: "/images/apps/youtube.png" },
+  { name: "TikTok", src: "/images/apps/tiktok.png" },
+  { name: "RSS", src: "/images/apps/rss.png" },
+  { name: "QR Code", src: "/images/apps/qr-code.png" },
+  { name: "Google Looker", src: "/images/apps/google-looker.png" },
+  { name: "Date & Time", src: "/images/apps/date-time.svg" },
+  { name: "Pexels", src: "/images/apps/pexels.png" },
+  { name: "PosterMyWall", src: "/images/apps/postermywall.png" },
+  { name: "Tableau", src: "/images/apps/tableau.png" },
+  { name: "HTML Embed", src: "/images/apps/html-embed.png" },
+  { name: "Pixabay", src: "/images/apps/pixabay.png" },
+  { name: "Unsplash", src: "/images/apps/unsplash.png" },
+  { name: "Weather", src: "/images/apps/weather.png" },
+  { name: "Website / URL", src: "/images/apps/website-url.png" },
+  { name: "CNN", src: "/images/apps/cnn.png" },
+  { name: "Power BI", src: "/images/apps/power-bi.png" },
+];
+
 const apps = [
   {
     icon: Palette,
@@ -122,35 +148,19 @@ const Apps = () => {
         </div>
       </section>
 
-      {/* Featured: Canva */}
+      {/* App Icons Grid */}
       <section className="py-16 bg-card/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="gradient-border p-1 rounded-3xl">
-              <div className="bg-card rounded-3xl p-8 md:p-12">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
-                    <Palette className="w-10 h-10 text-white" />
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
-                    <span className="text-sm text-primary font-medium">Featured App</span>
-                    <h2 className="text-2xl md:text-3xl font-display font-bold mt-1 mb-3">
-                      Canva Integration
-                    </h2>
-                    <p className="text-muted-foreground mb-4">
-                      Access 250,000+ free templates and use Canva's drag-and-drop tools to create stunning graphics. 
-                      Changes in Canva sync instantly to your screens — no downloads required.
-                    </p>
-                    <Button className="btn-hero" asChild>
-                      <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer">
-                        Try Canva Integration
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
+          <h2 className="text-lg font-medium text-muted-foreground text-center mb-8">
+            Built-in apps to show content faster
+          </h2>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10 max-w-5xl mx-auto">
+            {appIcons.map((app) => (
+              <div key={app.name} className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+                <img src={app.src} alt={app.name} className="h-10 md:h-12 w-auto object-contain" />
+                <span className="text-xs text-muted-foreground font-medium">{app.name}</span>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

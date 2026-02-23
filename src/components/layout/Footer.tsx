@@ -100,10 +100,15 @@ export const Footer = () => {
           <p className="text-sm text-white/50">
             © {new Date().getFullYear()} ScreenFusion. All rights reserved.
           </p>
-          <a href="mailto:support@screenfusion.ai" className="flex items-center gap-2 text-sm text-white/50 hover:text-primary transition-colors">
-            <Mail className="w-4 h-4" />
-            support@screenfusion.ai
-          </a>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <a href="mailto:sales@screenfusion.ai" className="flex items-center gap-2 text-sm text-white/50 hover:text-primary transition-colors">
+              <Mail className="w-4 h-4" />
+              sales@screenfusion.ai
+            </a>
+            <a href="tel:+353449672855" className="flex items-center gap-2 text-sm text-white/50 hover:text-primary transition-colors">
+              +353 44 967 2855
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { Mail, Phone, MapPin, MessageSquare, Clock, ArrowRight } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -56,20 +57,33 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <a href="mailto:support@screenfusion.ai" className="text-muted-foreground hover:text-primary transition-colors">
-                      support@screenfusion.ai
+                    <a href="mailto:sales@screenfusion.ai" className="text-muted-foreground hover:text-primary transition-colors">
+                      sales@screenfusion.ai
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <MessageSquare className="w-5 h-5 text-primary" />
+                    <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Live Chat</h4>
+                    <h4 className="font-semibold mb-1">Phone</h4>
+                    <a href="tel:+353449672855" className="text-muted-foreground hover:text-primary transition-colors">
+                      +353 44 967 2855
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Address</h4>
                     <p className="text-muted-foreground">
-                      Available on our dashboard for registered users
+                      ScreenFusion, Dromone, Oldcastle,<br />
+                      Co Meath A82E0W4, Ireland
                     </p>
                   </div>
                 </div>

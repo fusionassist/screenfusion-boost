@@ -1,14 +1,11 @@
 import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { 
-  Monitor, 
-  Smartphone, 
-  Laptop, 
-  Tv,
   CheckCircle2,
   ArrowRight,
   Star,
-  Download
+  Download,
+  Tv
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -125,21 +122,24 @@ const Hardware = () => {
           <h2 className="text-lg font-medium text-muted-foreground text-center mb-8">
             Compatible with all major platforms
           </h2>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 max-w-4xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 max-w-5xl mx-auto">
             {[
-              { name: "Android", icon: Smartphone },
-              { name: "Windows", icon: Monitor },
-              { name: "Linux", icon: Laptop },
-              { name: "Chrome", icon: Monitor },
-              { name: "Samsung", icon: Tv },
-              { name: "LG", icon: Tv },
-              { name: "BrightSign", icon: Tv },
-              { name: "Fire TV", icon: Tv },
-              { name: "Raspberry Pi", icon: Laptop },
+              { name: "Android", src: "/images/hardware/android.jpg" },
+              { name: "Windows", src: "/images/hardware/windows.png" },
+              { name: "Raspberry Pi", src: "/images/hardware/raspberry-pi.jpg" },
+              { name: "Chrome OS", src: "/images/hardware/chrome-os.jpg" },
+              { name: "Samsung", src: "/images/hardware/samsung.jpg" },
+              { name: "LG", src: "/images/hardware/lg.jpg" },
+              { name: "BrightSign", src: "/images/hardware/brightsign.jpg" },
+              { name: "Fire TV", src: "/images/hardware/fire-tv.jpg" },
+              { name: "Google TV", src: "/images/hardware/google-tv.jpg" },
+              { name: "Philips", src: "/images/hardware/philips.jpg" },
+              { name: "Vestel", src: "/images/hardware/vestel.jpg" },
+              { name: "Moytronix", src: "/images/hardware/moytronix.png" },
+              { name: "ScreenFusion Player", src: "/images/hardware/screenfusion-player.jpg" },
             ].map((platform) => (
-              <div key={platform.name} className="flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
-                <platform.icon className="w-8 h-8 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground font-medium">{platform.name}</span>
+              <div key={platform.name} className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+                <img src={platform.src} alt={platform.name} className="h-10 md:h-12 w-auto object-contain" />
               </div>
             ))}
           </div>

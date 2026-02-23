@@ -33,10 +33,14 @@ const currencies: Record<CurrencyCode, CurrencyInfo> = {
 
 const basePrices = { pro: 13.99, business: 168 };
 
-const formatPrice = (eurAmount: number, currency: CurrencyCode): string => {
-  const c = currencies[currency];
+const formatPrice = (eurAmount: number, curr: CurrencyCode): string => {
+  const c = currencies[curr];
   const converted = eurAmount * c.rate;
-  return `${c.symbol}${converted.toFixed(c.decimals)}`;
+  const rounded = Math.round(converted * 2) / 2; // round to nearest .50
+  if (c.decimals === 0) {
+    return `${c.symbol}${Math.round(rounded)}`;
+  }
+  return `${c.symbol}${rounded.toFixed(2)}`;
 };
 
 const getPlans = (currency: CurrencyCode) => [

@@ -83,10 +83,15 @@ const Reseller = () => {
               Grow Your Business with{" "}
               <span className="gradient-text">ScreenFusion</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Whether you want to fully brand our platform as your own or simply
-              resell ScreenFusion at discounted rates — we have a program for
-              you.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
+              Our partner programs are exclusively available to trade clients
+              operating in the digital signage industry — AV integrators,
+              managed service providers, IT resellers and signage companies.
+            </p>
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              Choose the program that fits your business: fully brand
+              our platform as your own, or resell ScreenFusion at
+              discounted volume pricing.
             </p>
           </div>
         </div>
@@ -118,7 +123,7 @@ const Reseller = () => {
                   Custom Pricing
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Tailored to your business
+                  Minimum 50 licences
                 </p>
               </div>
 
@@ -162,10 +167,10 @@ const Reseller = () => {
 
               <div className="bg-secondary/50 rounded-xl p-4 mb-6 text-center">
                 <div className="text-4xl font-display font-bold text-primary mb-1">
-                  Lower Pricing
+                  Volume Pricing
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Volume-based discounts
+                  Minimum 25 licences
                 </p>
               </div>
 

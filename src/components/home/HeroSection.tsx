@@ -75,12 +75,7 @@ export const HeroSection = () => {
               </video>
             </div>
 
-            {/* Floating stats cards */}
-            <div className="absolute -left-6 top-1/3 bg-white rounded-xl shadow-hover p-3 border border-border z-20">
-              <div className="text-xs text-muted-foreground mb-1">Screens Online</div>
-              <div className="text-2xl font-display font-bold text-foreground">2,847</div>
-              <div className="text-xs text-primary font-medium">↑ 12% this week</div>
-            </div>
+            {/* Floating stats card */}
             <div className="absolute -right-4 bottom-1/4 bg-white rounded-xl shadow-hover p-3 border border-border z-20">
               <div className="text-xs text-muted-foreground mb-1">Uptime</div>
               <div className="text-2xl font-display font-bold text-primary">99.9%</div>

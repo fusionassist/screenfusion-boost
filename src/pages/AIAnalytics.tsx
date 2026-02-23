@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import {
   CheckCircle2,
   ArrowRight,
-  BarChart3,
-  Eye,
   ShieldCheck,
   Cpu,
   WifiOff,
@@ -64,19 +62,19 @@ const features = [
 
 const whyCards = [
   {
-    icon: BarChart3,
+    iconSrc: "/images/icons/analytics.svg",
     title: "Audience Analytics",
     description:
       "Gain valuable analytics on your audience to make every campaign smarter. Track engagement and see which demographics respond best to your ads.",
   },
   {
-    icon: Eye,
+    iconSrc: "/images/icons/track-audience.svg",
     title: "Viewers Count",
     description:
       "See who's viewing your displays, track how many people notice your content, measure how long they watch, and find out what grabs the most attention.",
   },
   {
-    icon: ShieldCheck,
+    iconSrc: "/images/icons/affordable-pricing.svg",
     title: "Affordable Pricing",
     description:
       "Our subscription plans make industry-leading AI affordable for all businesses. No expensive hardware, just powerful AI features at a fraction of the price.",
@@ -123,6 +121,20 @@ const AIAnalytics = () => {
               </a>
             </Button>
           </div>
+
+          {/* Video */}
+          <div className="max-w-4xl mx-auto mt-12">
+            <div className="rounded-2xl overflow-hidden shadow-hover border border-border">
+              <video
+                src="/videos/ai-analytics.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -141,8 +153,8 @@ const AIAnalytics = () => {
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {whyCards.map((card) => (
               <div key={card.title} className="feature-card text-center">
-                <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center mx-auto mb-4">
-                  <card.icon className="w-6 h-6 text-primary-foreground" />
+                <div className="w-14 h-14 rounded-xl bg-secondary/60 flex items-center justify-center mx-auto mb-4">
+                  <img src={card.iconSrc} alt={card.title} className="w-8 h-8" />
                 </div>
                 <h3 className="font-display font-semibold mb-2">
                   {card.title}
@@ -293,13 +305,25 @@ const AIAnalytics = () => {
             <h2 className="text-xl md:text-2xl font-display font-bold mb-4">
               AI Dashboard for Performance Tracking
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground mb-6">
               The AI-powered dashboard delivers detailed reports and insights,
               helping businesses track engagement, identify peak activity times,
               measure content performance, and refine strategies to maximise
               ROI. Easily update displays and promotions to connect with the
               right audience at the right time.
             </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <img
+                src="/images/ai-dashboard-screen.png"
+                alt="AI Analytics Dashboard on screen"
+                className="rounded-xl border border-border shadow-sm w-full"
+              />
+              <img
+                src="/images/ai-analytics-dashboard.jpg"
+                alt="AI Analytics Dashboard overview"
+                className="rounded-xl border border-border shadow-sm w-full"
+              />
+            </div>
           </div>
         </div>
       </section>

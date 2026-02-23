@@ -31,6 +31,8 @@ serve(async (req) => {
         },
       ],
       mode: "payment",
+      automatic_tax: { enabled: true },
+      tax_id_collection: { enabled: true },
       success_url: `${origin}/shop/success`,
       cancel_url: `${origin}/shop/`,
       shipping_address_collection: {

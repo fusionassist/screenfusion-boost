@@ -139,6 +139,11 @@ const Pricing = () => {
                     </span>
                   </div>
                   <p className="text-sm text-muted-foreground">{plan.period}</p>
+                  {plan.price !== "Free" && (
+                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
+                      +VAT 23% (Ireland) · 0% EU/UK/Rest of World with valid VAT/Tax ID
+                    </p>
+                  )}
                 </div>
                 
                 <ul className="space-y-3 mb-8 flex-1">

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,9 +16,11 @@ import Hardware from "./pages/Hardware";
 import HowItWorks from "./pages/HowItWorks";
 import AIAnalytics from "./pages/AIAnalytics";
 import AudienceTargeting from "./pages/AudienceTargeting";
-import Shop from "./pages/Shop";
-import ShopSuccess from "./pages/ShopSuccess";
 import NotFound from "./pages/NotFound";
+
+// Lazy load pages that use Supabase client
+const Shop = lazy(() => import("./pages/Shop"));
+const ShopSuccess = lazy(() => import("./pages/ShopSuccess"));
 
 const queryClient = new QueryClient();
 
@@ -42,8 +45,8 @@ const App = () => (
           <Route path="/how-it-works/" element={<HowItWorks />} />
           <Route path="/solutions/ai-digital-signage-analytics/" element={<AIAnalytics />} />
           <Route path="/solutions/ai-digital-signage-audience-targeting/" element={<AudienceTargeting />} />
-          <Route path="/shop/" element={<Shop />} />
-          <Route path="/shop/success" element={<ShopSuccess />} />
+          <Route path="/shop/" element={<Suspense fallback={<div />}><Shop /></Suspense>} />
+          <Route path="/shop/success" element={<Suspense fallback={<div />}><ShopSuccess /></Suspense>} />
           
           {/* Catch-all for 404 */}
           <Route path="*" element={<NotFound />} />

@@ -6,11 +6,11 @@ const steps = [
   {
     number: "01",
     title: "Sign Up for Free",
-    description: "Create your free ScreenFusion account in seconds. No credit card required. Get access to all features with 1 free screen.",
+    description: "Create your free ScreenFusion account in seconds. No credit card required. Get access to all features with a free 14-day trial.",
     details: [
       "Instant account creation",
       "No credit card needed",
-      "1 screen free forever",
+      "14-day free trial",
       "Full feature access",
     ],
   },

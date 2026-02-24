@@ -97,9 +97,14 @@ export const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-white/50">
-            © {new Date().getFullYear()} ScreenFusion. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4">
+            <a href="https://www.guaranteedirish.ie" target="_blank" rel="noopener noreferrer">
+              <img src="/images/guaranteed-irish.png" alt="Guaranteed Irish" className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
+            <p className="text-sm text-white/50">
+              © {new Date().getFullYear()} ScreenFusion. All rights reserved.
+            </p>
+          </div>
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <a href="mailto:sales@screenfusion.ai" className="flex items-center gap-2 text-sm text-white/50 hover:text-primary transition-colors">
               <Mail className="w-4 h-4" />

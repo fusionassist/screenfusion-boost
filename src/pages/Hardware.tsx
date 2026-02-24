@@ -8,6 +8,7 @@ import {
   Tv
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { publicUrl } from "@/lib/utils";
 
 const players = [
   {
@@ -124,19 +125,19 @@ const Hardware = () => {
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 max-w-5xl mx-auto">
             {[
-              { name: "Android", src: "/images/hardware/android.jpg" },
-              { name: "Windows", src: "/images/hardware/windows.png" },
-              { name: "Raspberry Pi", src: "/images/hardware/raspberry-pi.jpg" },
-              { name: "Chrome OS", src: "/images/hardware/chrome-os.jpg" },
-              { name: "Samsung", src: "/images/hardware/samsung.jpg" },
-              { name: "LG", src: "/images/hardware/lg.jpg" },
-              { name: "BrightSign", src: "/images/hardware/brightsign.jpg" },
-              { name: "Fire TV", src: "/images/hardware/fire-tv.jpg" },
-              { name: "Google TV", src: "/images/hardware/google-tv.jpg" },
-              { name: "Philips", src: "/images/hardware/philips.jpg" },
-              { name: "Vestel", src: "/images/hardware/vestel.jpg" },
-              { name: "Moytronix", src: "/images/hardware/moytronix.png" },
-              { name: "ScreenFusion Player", src: "/images/hardware/screenfusion-player.jpg" },
+              { name: "Android", src: publicUrl("images/hardware/android.jpg") },
+              { name: "Windows", src: publicUrl("images/hardware/windows.png") },
+              { name: "Raspberry Pi", src: publicUrl("images/hardware/raspberry-pi.jpg") },
+              { name: "Chrome OS", src: publicUrl("images/hardware/chrome-os.jpg") },
+              { name: "Samsung", src: publicUrl("images/hardware/samsung.jpg") },
+              { name: "LG", src: publicUrl("images/hardware/lg.jpg") },
+              { name: "BrightSign", src: publicUrl("images/hardware/brightsign.jpg") },
+              { name: "Fire TV", src: publicUrl("images/hardware/fire-tv.jpg") },
+              { name: "Google TV", src: publicUrl("images/hardware/google-tv.jpg") },
+              { name: "Philips", src: publicUrl("images/hardware/philips.jpg") },
+              { name: "Vestel", src: publicUrl("images/hardware/vestel.jpg") },
+              { name: "Moytronix", src: publicUrl("images/hardware/moytronix.png") },
+              { name: "ScreenFusion Player", src: publicUrl("images/hardware/screenfusion-player.jpg") },
             ].map((platform) => (
               <div key={platform.name} className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
                 <img src={platform.src} alt={platform.name} className="h-10 md:h-12 w-auto object-contain" />

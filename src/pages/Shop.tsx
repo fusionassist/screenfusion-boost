@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { ShoppingCart, Check, Minus, Plus, ArrowRight, Shield, Truck, RefreshCw } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { publicUrl } from "@/lib/utils";
 
 const PLAYER_PRICE_EUR = 99;
 
@@ -65,7 +66,7 @@ const Shop = () => {
             {/* Product Image */}
             <div className="rounded-2xl overflow-hidden border border-border shadow-hover">
               <img
-                src="/images/hardware/screenfusion-player.jpg"
+                src={publicUrl("images/hardware/screenfusion-player.jpg")}
                 alt="ScreenFusion Player - Digital Signage Media Player"
                 className="w-full h-auto"
               />

@@ -97,7 +97,8 @@ export const Header = () => {
                 Solutions <ChevronDown className="w-3.5 h-3.5" />
               </button>
               {openDropdown === "solutions" && (
-                <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-xl border border-border shadow-hover p-2 animate-fade-in">
+                <div className="absolute top-full left-0 pt-1 z-[100] w-80 -mt-px">
+                  <div className="bg-white rounded-xl border border-border shadow-hover p-2 animate-fade-in">
                   <div className="grid grid-cols-2 gap-1">
                     {solutions.map((s) => (
                       <Link
@@ -109,6 +110,7 @@ export const Header = () => {
                         <div className="text-xs text-muted-foreground mt-0.5">{s.description}</div>
                       </Link>
                     ))}
+                  </div>
                   </div>
                 </div>
               )}
@@ -124,17 +126,19 @@ export const Header = () => {
                 Features <ChevronDown className="w-3.5 h-3.5" />
               </button>
               {openDropdown === "features" && (
-                <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl border border-border shadow-hover p-2 animate-fade-in">
-                  {featuresNav.map((f) => (
-                    <Link
-                      key={f.title}
-                      to={f.href}
-                      className="block px-3 py-2.5 rounded-lg hover:bg-secondary transition-colors"
-                    >
-                      <div className="text-sm font-medium text-foreground">{f.title}</div>
-                      {f.description && <div className="text-xs text-muted-foreground mt-0.5">{f.description}</div>}
-                    </Link>
-                  ))}
+                <div className="absolute top-full left-0 pt-1 z-[100] w-72 -mt-px">
+                  <div className="bg-white rounded-xl border border-border shadow-hover p-2 animate-fade-in">
+                    {featuresNav.map((f) => (
+                      <Link
+                        key={f.title}
+                        to={f.href}
+                        className="block px-3 py-2.5 rounded-lg hover:bg-secondary transition-colors"
+                      >
+                        <div className="text-sm font-medium text-foreground">{f.title}</div>
+                        {f.description && <div className="text-xs text-muted-foreground mt-0.5">{f.description}</div>}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -172,7 +176,7 @@ export const Header = () => {
                 <ChevronDown className="w-3 h-3" />
               </button>
               {openDropdown === "language" && (
-                <div className="absolute top-full right-0 mt-1 w-44 bg-white rounded-xl border border-border shadow-hover p-1.5 animate-fade-in max-h-80 overflow-y-auto">
+                <div className="absolute top-full right-0 z-50 mt-1 w-44 bg-white rounded-xl border border-border shadow-hover p-1.5 animate-fade-in max-h-80 overflow-y-auto">
                   <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider px-2.5 py-1.5">17 Languages</p>
                   {languages.map((lang) => (
                     <button
@@ -190,7 +194,7 @@ export const Header = () => {
               )}
             </div>
             <a
-              href="https://manage.screenfusion.ai"
+              href="https://app.screenfusion.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
@@ -198,7 +202,7 @@ export const Header = () => {
               Log In
             </a>
             <a
-              href="https://manage.screenfusion.ai"
+              href="https://app.screenfusion.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-sm px-5 py-2.5"
@@ -263,10 +267,10 @@ export const Header = () => {
               </div>
             </div>
             <div className="border-t border-border mt-2 pt-3 flex flex-col gap-2">
-              <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-center rounded-lg border border-border text-sm font-semibold text-foreground hover:bg-secondary transition-colors">
+              <a href="https://app.screenfusion.ai" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-center rounded-lg border border-border text-sm font-semibold text-foreground hover:bg-secondary transition-colors">
                 Log In
               </a>
-              <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm text-center">
+              <a href="https://app.screenfusion.ai" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm text-center">
                 Try For Free
               </a>
             </div>

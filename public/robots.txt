@@ -1,14 +1,59 @@
+# Allow all crawlers and bots - no restrictions
+# Search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: Slurp
+Allow: /
+
+# Social / embed bots
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+# AI / LLM crawlers (ChatGPT, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-AI
+Allow: /
+
+# TikTok
+User-agent: Bytespider
+Allow: /
+
+User-agent: Bytedance
+Allow: /
+
+# Generic - allow everything
 User-agent: *
 Allow: /
+
+# Sitemap for discoverability
+Sitemap: https://www.screenfusion.ai/sitemap.xml

@@ -124,7 +124,7 @@ const HowItWorks = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button className="btn-hero" asChild>
-              <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer">
+              <a href="https://app.screenfusion.ai" target="_blank" rel="noopener noreferrer">
                 Start Free Trial
                 <ArrowRight className="ml-2 w-4 h-4" />
               </a>

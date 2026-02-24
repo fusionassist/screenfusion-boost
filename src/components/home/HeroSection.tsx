@@ -1,10 +1,11 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { publicUrl } from "@/lib/utils";
 
 export const HeroSection = () => {
   return (
     <section className="bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-64px)] pt-20 pb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center pt-8 pb-8">
           {/* Left: Text */}
           <div className="stagger">
             <div className="chip mb-5">
@@ -71,7 +72,7 @@ export const HeroSection = () => {
                 className="w-full h-auto rounded-2xl"
                 poster=""
               >
-                <source src="https://screenfusion.ai/wp-content/uploads/2025/02/screenfusion-digital-signage.mp4" type="video/mp4" />
+                <source src={publicUrl("videos/screenfusion-digital-signage_home.mp4")} type="video/mp4" />
               </video>
             </div>
 
@@ -86,7 +87,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Logos bar */}
-      <div className="border-t border-border bg-white py-10">
+      <div className="border-t border-border bg-white py-6">
         <div className="container mx-auto px-4">
           <p className="text-center text-sm text-muted-foreground mb-8 font-medium">
             Compatible with all major platforms & devices

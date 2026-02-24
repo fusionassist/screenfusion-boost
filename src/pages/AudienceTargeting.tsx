@@ -11,6 +11,7 @@ import {
   Eye,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { publicUrl } from "@/lib/utils";
 
 const highlights = [
   "Smart Ad Targeting",
@@ -22,19 +23,19 @@ const highlights = [
 
 const whyCards = [
   {
-    iconSrc: "/images/icons/maximise-ad.svg",
+    iconSrc: publicUrl("images/icons/maximise-ad.svg"),
     title: "Maximise Ad Impact",
     description:
       "Target the right audience with dynamic, customised content. Use precise audience segmentation to deliver ads that resonate with each group and maximise campaign performance.",
   },
   {
-    iconSrc: "/images/icons/user-exp.svg",
+    iconSrc: publicUrl("images/icons/user-exp.svg"),
     title: "Personalised Campaigns",
     description:
       "Show personalised content that resonates with your audience and keeps them interested. Our solution analyses audience data to show ads that are relevant and targeted for each viewer.",
   },
   {
-    iconSrc: "/images/icons/affordable-pricing.svg",
+    iconSrc: publicUrl("images/icons/affordable-pricing.svg"),
     title: "Cost-Effective Targeting",
     description:
       "Use powerful audience targeting without breaking the budget. Our solution uses smart data insights to maximise ROI for all businesses of all sizes.",
@@ -124,7 +125,7 @@ const AudienceTargeting = () => {
           <div className="max-w-4xl mx-auto mt-12">
             <div className="rounded-xl overflow-hidden border border-border shadow-lg">
               <video
-                src="/videos/audience-target-video.mp4"
+                src={publicUrl("videos/audience-target-video.mp4")}
                 autoPlay
                 muted
                 loop
@@ -224,7 +225,7 @@ const AudienceTargeting = () => {
           </p>
           <div className="rounded-xl overflow-hidden border border-border shadow-lg">
             <video
-              src="/videos/digital-signage-audience-target.mp4"
+              src={publicUrl("videos/digital-signage-audience-target.mp4")}
               autoPlay
               muted
               loop

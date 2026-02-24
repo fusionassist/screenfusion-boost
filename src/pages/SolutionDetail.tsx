@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { useParams, Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { publicUrl } from "@/lib/utils";
 
 // Solution data - this would typically come from a CMS or API
 const solutionsData: Record<string, {
@@ -15,7 +16,7 @@ const solutionsData: Record<string, {
   "digital-signage-education": {
     title: "Education",
     subtitle: "Digital Signage for Schools & Universities",
-    heroVideo: "/videos/digital-signage-education.mp4",
+    heroVideo: "videos/digital-signage-education.mp4",
     description: "Transform campus communication with dynamic digital displays that keep students, staff, and visitors informed and engaged.",
     features: [
       "Campus-wide announcements",
@@ -45,7 +46,7 @@ const solutionsData: Record<string, {
   "digital-signage-restaurants-cafes": {
     title: "Restaurants & Cafes",
     subtitle: "Digital Menu Boards & Promotions",
-    heroVideo: "/videos/digital-signage-restaurants.mp4",
+    heroVideo: "videos/digital-signage-restaurants.mp4",
     description: "Boost sales and streamline operations with dynamic digital menu boards that update in real-time.",
     features: [
       "Digital menu boards",
@@ -75,7 +76,7 @@ const solutionsData: Record<string, {
   "digital-signage-retail": {
     title: "Retail",
     subtitle: "In-Store Digital Displays",
-    heroVideo: "/videos/digital-signage-retail.mp4",
+    heroVideo: "videos/digital-signage-retail.mp4",
     description: "Create immersive shopping experiences with dynamic displays that showcase products and drive sales.",
     features: [
       "Product showcases",
@@ -105,7 +106,7 @@ const solutionsData: Record<string, {
   "digital-signage-real-estate": {
     title: "Real Estate",
     subtitle: "Property Listings & Showcases",
-    heroVideo: "/videos/digital-signage-real-estate.mp4",
+    heroVideo: "videos/digital-signage-real-estate.mp4",
     description: "Attract buyers and showcase properties with stunning digital displays that integrate with your CRM.",
     features: [
       "Property listings",
@@ -135,7 +136,7 @@ const solutionsData: Record<string, {
   "digital-signage-healthcare": {
     title: "Healthcare",
     subtitle: "Patient Communication & Wayfinding",
-    heroVideo: "/videos/digital-signage-healthcare.mp4",
+    heroVideo: "videos/digital-signage-healthcare.mp4",
     description: "Improve patient experience and streamline communication in hospitals, clinics, and medical offices.",
     features: [
       "Wayfinding & directories",
@@ -165,7 +166,7 @@ const solutionsData: Record<string, {
   "digital-signage-hospitality": {
     title: "Hospitality",
     subtitle: "Guest Services & Information",
-    heroVideo: "/videos/digital-signage-hospitality.mp4",
+    heroVideo: "videos/digital-signage-hospitality.mp4",
     description: "Elevate guest experiences with digital displays that inform, guide, and delight.",
     features: [
       "Guest directories",
@@ -195,7 +196,7 @@ const solutionsData: Record<string, {
   "digital-signage-advertisers": {
     title: "DOOH Advertising",
     subtitle: "Digital Out-of-Home Advertising",
-    heroVideo: "/videos/digital-signage-advertisers.mp4",
+    heroVideo: "videos/digital-signage-advertisers.mp4",
     description: "Monetize your screens with programmatic advertising and audience-targeted campaigns.",
     features: [
       "Programmatic advertising",
@@ -334,7 +335,7 @@ const SolutionDetail = () => {
             <div className="max-w-4xl mx-auto mt-12">
               <div className="rounded-xl overflow-hidden border border-border shadow-lg">
                 <video
-                  src={solution.heroVideo}
+                  src={publicUrl(solution.heroVideo)}
                   autoPlay
                   muted
                   loop
@@ -407,7 +408,7 @@ const SolutionDetail = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button className="btn-hero" asChild>
-                <a href="https://manage.screenfusion.ai" target="_blank" rel="noopener noreferrer">
+                <a href="https://app.screenfusion.ai" target="_blank" rel="noopener noreferrer">
                   Start Free Trial
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </a>

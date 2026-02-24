@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Linkedin, Twitter, Youtube, Facebook } from "lucide-react";
 import logoWhite from "@/assets/logo-white.png";
+import { publicUrl } from "@/lib/utils";
 
 const solutions = [
   { name: "Education", href: "/solutions/digital-signage-education/" },
@@ -99,7 +100,7 @@ export const Footer = () => {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-4">
             <a href="https://www.guaranteedirish.ie" target="_blank" rel="noopener noreferrer">
-              <img src="/images/guaranteed-irish.png" alt="Guaranteed Irish" className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity" />
+              <img src={publicUrl("images/guaranteed-irish.png")} alt="Guaranteed Irish" className="h-10 w-auto opacity-80 hover:opacity-100 transition-opacity" />
             </a>
             <p className="text-sm text-white/50">
               © {new Date().getFullYear()} ScreenFusion. All rights reserved.

@@ -11,6 +11,7 @@ import {
   LayoutDashboard,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { publicUrl } from "@/lib/utils";
 
 const highlights = [
   "Advanced AI Technology",
@@ -62,19 +63,19 @@ const features = [
 
 const whyCards = [
   {
-    iconSrc: "/images/icons/analytics.svg",
+    iconSrc: publicUrl("images/icons/analytics.svg"),
     title: "Audience Analytics",
     description:
       "Gain valuable analytics on your audience to make every campaign smarter. Track engagement and see which demographics respond best to your ads.",
   },
   {
-    iconSrc: "/images/icons/track-audience.svg",
+    iconSrc: publicUrl("images/icons/track-audience.svg"),
     title: "Viewers Count",
     description:
       "See who's viewing your displays, track how many people notice your content, measure how long they watch, and find out what grabs the most attention.",
   },
   {
-    iconSrc: "/images/icons/affordable-pricing.svg",
+    iconSrc: publicUrl("images/icons/affordable-pricing.svg"),
     title: "Affordable Pricing",
     description:
       "Our subscription plans make industry-leading AI affordable for all businesses. No expensive hardware, just powerful AI features at a fraction of the price.",
@@ -126,7 +127,7 @@ const AIAnalytics = () => {
           <div className="max-w-4xl mx-auto mt-12">
             <div className="rounded-2xl overflow-hidden shadow-hover border border-border">
               <video
-                src="/videos/ai-analytics.mp4"
+                src={publicUrl("videos/ai-analytics.mp4")}
                 autoPlay
                 muted
                 loop
@@ -314,12 +315,12 @@ const AIAnalytics = () => {
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <img
-                src="/images/ai-dashboard-screen.png"
+                src={publicUrl("images/ai-dashboard-screen.png")}
                 alt="AI Analytics Dashboard on screen"
                 className="rounded-xl border border-border shadow-sm w-full"
               />
               <img
-                src="/images/ai-analytics-dashboard.jpg"
+                src={publicUrl("images/ai-analytics-dashboard.jpg")}
                 alt="AI Analytics Dashboard overview"
                 className="rounded-xl border border-border shadow-sm w-full"
               />

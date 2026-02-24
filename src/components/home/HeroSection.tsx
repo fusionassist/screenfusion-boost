@@ -2,9 +2,9 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="pt-16 bg-white overflow-hidden">
+    <section className="bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-64px)] py-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-64px)] pt-20 pb-16">
           {/* Left: Text */}
           <div className="stagger">
             <div className="chip mb-5">

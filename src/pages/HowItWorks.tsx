@@ -19,7 +19,7 @@ const steps = [
     title: "Choose Your Content",
     description: "Select from hundreds of templates or create your own. Use our drag-and-drop editor, upload media, or connect apps like Canva.",
     details: [
-      "500+ ready-made templates",
+      "Ready-made templates",
       "Drag-and-drop editor",
       "Media library upload",
       "App integrations",

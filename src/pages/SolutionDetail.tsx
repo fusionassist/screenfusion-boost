@@ -281,6 +281,64 @@ const solutionsData: Record<string, {
       },
     ],
   },
+  "digital-signage-corporate": {
+    title: "Corporate",
+    subtitle: "Internal Communications & Office Displays",
+    description: "Streamline internal communications and boost employee engagement with dynamic digital signage across offices, lobbies, and meeting rooms.",
+    features: [
+      "Internal announcements",
+      "KPI dashboards",
+      "Meeting room displays",
+      "Employee recognition",
+      "Company news feeds",
+      "Event calendars",
+      "Visitor welcome screens",
+      "Health & safety notices",
+    ],
+    useCases: [
+      {
+        title: "Employee Engagement",
+        description: "Share company updates, celebrate achievements, and foster culture with digital displays throughout the workplace.",
+      },
+      {
+        title: "Meeting Room Management",
+        description: "Display room availability, meeting schedules, and booking information outside conference rooms.",
+      },
+      {
+        title: "Lobby & Reception",
+        description: "Welcome visitors with branded displays, directories, and real-time company information.",
+      },
+    ],
+  },
+  "digital-signage-gym": {
+    title: "Gym & Fitness",
+    subtitle: "Class Schedules & Member Engagement",
+    description: "Energize your gym or fitness studio with digital signage that motivates members, promotes classes, and drives revenue.",
+    features: [
+      "Class schedules & timetables",
+      "Workout of the day",
+      "Membership promotions",
+      "Personal trainer spotlights",
+      "Nutrition tips & content",
+      "Social media walls",
+      "Leaderboards & challenges",
+      "TV & entertainment zones",
+    ],
+    useCases: [
+      {
+        title: "Class Promotion",
+        description: "Display live class schedules and availability to boost attendance and fill empty spots.",
+      },
+      {
+        title: "Member Motivation",
+        description: "Show workout challenges, leaderboards, and motivational content to keep members engaged.",
+      },
+      {
+        title: "Revenue Growth",
+        description: "Promote personal training, supplements, merchandise, and membership upgrades on-screen.",
+      },
+    ],
+  },
 };
 
 const SolutionDetail = () => {

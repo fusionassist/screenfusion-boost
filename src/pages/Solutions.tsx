@@ -10,6 +10,7 @@ import {
   Megaphone,
   BarChart3,
   Target,
+  Dumbbell,
   ArrowRight
 } from "lucide-react";
 
@@ -62,6 +63,20 @@ const solutions = [
     description: "Digital out-of-home advertising solutions with programmatic capabilities and audience targeting.",
     href: "/solutions/digital-signage-advertisers/",
     features: ["Programmatic ads", "Audience data", "Campaign management", "Revenue tracking"],
+  },
+  {
+    icon: Building2,
+    title: "Corporate",
+    description: "Streamline internal communications and boost employee engagement with digital displays across offices and lobbies.",
+    href: "/solutions/digital-signage-corporate/",
+    features: ["Internal comms", "KPI dashboards", "Meeting rooms", "Visitor screens"],
+  },
+  {
+    icon: Dumbbell,
+    title: "Gym & Fitness",
+    description: "Energize your gym with digital signage that motivates members, promotes classes, and drives revenue.",
+    href: "/solutions/digital-signage-gym/",
+    features: ["Class schedules", "Leaderboards", "Promotions", "Workout content"],
   },
   {
     icon: BarChart3,

@@ -10,6 +10,7 @@ const solutionsData: Record<string, {
   subtitle: string;
   description: string;
   heroVideo?: string;
+  heroImage?: string;
   features: string[];
   useCases: { title: string; description: string }[];
 }> = {
@@ -284,6 +285,7 @@ const solutionsData: Record<string, {
   "digital-signage-corporate": {
     title: "Corporate",
     subtitle: "Internal Communications & Office Displays",
+    heroImage: "images/solutions/corporate-hero.jpg",
     description: "Streamline internal communications and boost employee engagement with dynamic digital signage across offices, lobbies, and meeting rooms.",
     features: [
       "Internal announcements",
@@ -313,6 +315,7 @@ const solutionsData: Record<string, {
   "digital-signage-gym": {
     title: "Gym & Fitness",
     subtitle: "Class Schedules & Member Engagement",
+    heroImage: "images/solutions/gym-hero.jpg",
     description: "Energize your gym or fitness studio with digital signage that motivates members, promotes classes, and drives revenue.",
     features: [
       "Class schedules & timetables",
@@ -399,6 +402,19 @@ const SolutionDetail = () => {
                   loop
                   playsInline
                   className="w-full"
+                />
+              </div>
+            </div>
+          )}
+
+          {!solution.heroVideo && solution.heroImage && (
+            <div className="max-w-4xl mx-auto mt-12">
+              <div className="rounded-xl overflow-hidden border border-border shadow-lg">
+                <img
+                  src={publicUrl(solution.heroImage)}
+                  alt={`Digital signage for ${solution.title}`}
+                  className="w-full object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>

@@ -158,7 +158,7 @@ export const Header = () => {
             <Link to="/shop/" className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
               Shop
             </Link>
-            <a href="https://screenfusion.ai/dashboard/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
+            <a href="https://help.screenfusion.ai/dashboard/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-sm font-medium text-foreground/75 hover:text-primary transition-colors rounded-md hover:bg-secondary">
               Help
             </a>
           </div>
@@ -245,7 +245,7 @@ export const Header = () => {
               <Link to="/apps/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Apps</Link>
               <Link to="/digital-signage-player/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Hardware</Link>
               <Link to="/shop/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Shop</Link>
-              <a href="https://screenfusion.ai/dashboard/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Help</a>
+              <a href="https://help.screenfusion.ai/dashboard/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">Help</a>
               <Link to="/how-it-works/" className="px-3 py-2 rounded-lg text-sm text-foreground hover:bg-secondary transition-colors">How It Works</Link>
             </div>
             {/* Mobile Language Selector */}

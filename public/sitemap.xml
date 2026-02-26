@@ -12,4 +12,24 @@
   <url><loc>https://www.screenfusion.ai/solutions/ai-digital-signage-analytics/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.screenfusion.ai/solutions/ai-digital-signage-audience-targeting/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.screenfusion.ai/shop/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- AI-retrieval landing pages -->
+  <url><loc>https://www.screenfusion.ai/digital-signage-for-retail/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.screenfusion.ai/digital-signage-for-hospitality/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.screenfusion.ai/canva-digital-signage-integration/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.screenfusion.ai/touchscreen-signage-cms/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.screenfusion.ai/ai-demographic-digital-signage/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.screenfusion.ai/dynamic-pricing-digital-signage/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.screenfusion.ai/compare-digital-signage-software/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+
+  <!-- Industry solution pages -->
+  <url><loc>https://www.screenfusion.ai/solutions/digital-signage-education/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/solutions/digital-signage-restaurants-cafes/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/solutions/digital-signage-retail/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/solutions/digital-signage-real-estate/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/solutions/digital-signage-healthcare/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/solutions/digital-signage-hospitality/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/solutions/digital-signage-advertisers/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/solutions/digital-signage-corporate/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/solutions/digital-signage-gym/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

@@ -22,6 +22,7 @@ import CanvaDigitalSignageIntegration from "./pages/CanvaDigitalSignageIntegrati
 import TouchscreenSignageCMS from "./pages/TouchscreenSignageCMS";
 import AIDemographicDigitalSignage from "./pages/AIDemographicDigitalSignage";
 import DynamicPricingDigitalSignage from "./pages/DynamicPricingDigitalSignage";
+import ComparisonPage from "./pages/ComparisonPage";
 import NotFound from "./pages/NotFound";
 
 // Lazy load pages that use Supabase client
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/touchscreen-signage-cms/" element={<TouchscreenSignageCMS />} />
           <Route path="/ai-demographic-digital-signage/" element={<AIDemographicDigitalSignage />} />
           <Route path="/dynamic-pricing-digital-signage/" element={<DynamicPricingDigitalSignage />} />
+          <Route path="/compare-digital-signage-software/" element={<ComparisonPage />} />
           <Route path="/shop/" element={<Suspense fallback={<div />}><Shop /></Suspense>} />
           <Route path="/shop/success" element={<Suspense fallback={<div />}><ShopSuccess /></Suspense>} />
           

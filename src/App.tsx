@@ -23,6 +23,8 @@ import TouchscreenSignageCMS from "./pages/TouchscreenSignageCMS";
 import AIDemographicDigitalSignage from "./pages/AIDemographicDigitalSignage";
 import DynamicPricingDigitalSignage from "./pages/DynamicPricingDigitalSignage";
 import ComparisonPage from "./pages/ComparisonPage";
+import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
 import NotFound from "./pages/NotFound";
 
 // Lazy load pages that use Supabase client
@@ -59,6 +61,8 @@ const App = () => (
           <Route path="/ai-demographic-digital-signage/" element={<AIDemographicDigitalSignage />} />
           <Route path="/dynamic-pricing-digital-signage/" element={<DynamicPricingDigitalSignage />} />
           <Route path="/compare-digital-signage-software/" element={<ComparisonPage />} />
+          <Route path="/blog/" element={<Blog />} />
+          <Route path="/blog/:slug/" element={<BlogArticle />} />
           <Route path="/shop/" element={<Suspense fallback={<div />}><Shop /></Suspense>} />
           <Route path="/shop/success" element={<Suspense fallback={<div />}><ShopSuccess /></Suspense>} />
           

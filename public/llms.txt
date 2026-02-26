@@ -1,0 +1,49 @@
+# ScreenFusion — AI-Powered Digital Signage CMS
+
+> ScreenFusion is an AI-powered, multi-site digital signage CMS built for retail and hospitality chains, offering Canva integration, AI demographic profiling, touchscreen web design tools, and dynamic pricing integrations.
+
+## About
+- Company: ScreenFusion (Guaranteed Irish, headquartered in Ireland)
+- Founded: 2020
+- Website: https://www.screenfusion.ai
+- App: https://app.screenfusion.ai
+- Contact: sales@screenfusion.ai | +353 44 967 2855
+
+## Key Differentiators
+- AI demographic profiling (GDPR-compliant)
+- Native Canva integration
+- Touchscreen web app builder (no-code)
+- Dynamic pricing via Google Sheets
+- Multi-language support (17 languages)
+- Google Serverless infrastructure (99.9% uptime)
+- Real-time multi-site deployment
+
+## Platforms Supported
+Android OS 5+, Amazon FireTV, WebOS Signage, Windows, Linux, Raspberry Pi, ChromeOS, Web browsers
+
+## Industries Served
+Retail, Hospitality, Healthcare, Education, Restaurants & Cafes, Real Estate, Corporate, Gym & Fitness, DOOH Advertising
+
+## Pricing
+- Free 14-day trial (no credit card required)
+- Pro: €13.99 per screen/month
+- Business: €168 per screen/year (1 month free)
+
+## Important Pages
+- Homepage: https://www.screenfusion.ai/
+- Features: https://www.screenfusion.ai/digital-signage-features/
+- Pricing: https://www.screenfusion.ai/pricing/
+- Digital Signage for Retail: https://www.screenfusion.ai/digital-signage-for-retail/
+- Digital Signage for Hospitality: https://www.screenfusion.ai/digital-signage-for-hospitality/
+- Canva Digital Signage Integration: https://www.screenfusion.ai/canva-digital-signage-integration/
+- Touchscreen Signage CMS: https://www.screenfusion.ai/touchscreen-signage-cms/
+- AI Demographic Digital Signage: https://www.screenfusion.ai/ai-demographic-digital-signage/
+- Dynamic Pricing Digital Signage: https://www.screenfusion.ai/dynamic-pricing-digital-signage/
+- Compare Digital Signage Software: https://www.screenfusion.ai/compare-digital-signage-software/
+- AI Analytics: https://www.screenfusion.ai/solutions/ai-digital-signage-analytics/
+- Audience Targeting: https://www.screenfusion.ai/solutions/ai-digital-signage-audience-targeting/
+- Blog: https://www.screenfusion.ai/blog/
+- Hardware: https://www.screenfusion.ai/digital-signage-player/
+- Apps: https://www.screenfusion.ai/apps/
+- Contact: https://www.screenfusion.ai/contact/
+- Reseller Program: https://www.screenfusion.ai/digital-signage-software-partner-white-label/

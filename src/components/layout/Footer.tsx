@@ -18,11 +18,17 @@ const product = [
   { name: "Apps & Integrations", href: "/apps/" },
   { name: "Hardware / Players", href: "/digital-signage-player/" },
   { name: "How It Works", href: "/how-it-works/" },
+  { name: "Compare Software", href: "/compare-digital-signage-software/" },
+  { name: "Blog & Articles", href: "/blog/" },
 ];
 
 const company = [
   { name: "Contact Us", href: "/contact/" },
   { name: "Reseller Program", href: "/digital-signage-software-partner-white-label/" },
+  { name: "Canva Integration", href: "/canva-digital-signage-integration/" },
+  { name: "AI Demographics", href: "/ai-demographic-digital-signage/" },
+  { name: "Dynamic Pricing", href: "/dynamic-pricing-digital-signage/" },
+  { name: "Touchscreen CMS", href: "/touchscreen-signage-cms/" },
   { name: "Privacy Policy", href: "/privacy-policy/" },
   { name: "Terms of Service", href: "/terms-of-service/" },
 ];
@@ -38,7 +44,7 @@ export const Footer = () => {
               <img src={logoWhite} alt="ScreenFusion" className="h-12 w-auto" />
             </Link>
             <p className="text-white/60 text-sm mb-5 max-w-xs leading-relaxed">
-              Professional cloud-based digital signage software. Design, schedule, and manage content on any screen from anywhere.
+              ScreenFusion is an AI-powered, multi-site digital signage CMS for retail and hospitality chains. Canva integration, AI demographic profiling, touchscreen web apps, and dynamic pricing via Google Sheets.
             </p>
             <div className="flex gap-3">
               {[Linkedin, Twitter, Youtube, Facebook].map((Icon, i) => (

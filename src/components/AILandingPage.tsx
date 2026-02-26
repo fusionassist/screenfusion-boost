@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useSEO } from "@/hooks/useSEO";
 import {
   Accordion,
   AccordionContent,
@@ -37,6 +38,8 @@ export const AILandingPage = ({
   faqs,
   ctaText = "Start Free Trial",
 }: AILandingPageProps) => {
+  useSEO({ title: meta.title, description: meta.description });
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

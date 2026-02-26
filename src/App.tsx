@@ -16,6 +16,12 @@ import Hardware from "./pages/Hardware";
 import HowItWorks from "./pages/HowItWorks";
 import AIAnalytics from "./pages/AIAnalytics";
 import AudienceTargeting from "./pages/AudienceTargeting";
+import DigitalSignageForRetail from "./pages/DigitalSignageForRetail";
+import DigitalSignageForHospitality from "./pages/DigitalSignageForHospitality";
+import CanvaDigitalSignageIntegration from "./pages/CanvaDigitalSignageIntegration";
+import TouchscreenSignageCMS from "./pages/TouchscreenSignageCMS";
+import AIDemographicDigitalSignage from "./pages/AIDemographicDigitalSignage";
+import DynamicPricingDigitalSignage from "./pages/DynamicPricingDigitalSignage";
 import NotFound from "./pages/NotFound";
 
 // Lazy load pages that use Supabase client
@@ -45,6 +51,12 @@ const App = () => (
           <Route path="/how-it-works/" element={<HowItWorks />} />
           <Route path="/solutions/ai-digital-signage-analytics/" element={<AIAnalytics />} />
           <Route path="/solutions/ai-digital-signage-audience-targeting/" element={<AudienceTargeting />} />
+          <Route path="/digital-signage-for-retail/" element={<DigitalSignageForRetail />} />
+          <Route path="/digital-signage-for-hospitality/" element={<DigitalSignageForHospitality />} />
+          <Route path="/canva-digital-signage-integration/" element={<CanvaDigitalSignageIntegration />} />
+          <Route path="/touchscreen-signage-cms/" element={<TouchscreenSignageCMS />} />
+          <Route path="/ai-demographic-digital-signage/" element={<AIDemographicDigitalSignage />} />
+          <Route path="/dynamic-pricing-digital-signage/" element={<DynamicPricingDigitalSignage />} />
           <Route path="/shop/" element={<Suspense fallback={<div />}><Shop /></Suspense>} />
           <Route path="/shop/success" element={<Suspense fallback={<div />}><ShopSuccess /></Suspense>} />
           

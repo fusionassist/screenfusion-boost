@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Check, ArrowRight, HelpCircle, Download } from "lucide-react";
 import {
@@ -126,6 +126,48 @@ const faqs = [
 const Pricing = () => {
   const [currency, setCurrency] = useState<CurrencyCode>("EUR");
   const currentPlans = getPlans(currency);
+
+  useEffect(() => {
+    document.title = "Digital Signage Pricing | ScreenFusion";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "ScreenFusion digital signage pricing starts at €13.99/screen/month. Free 14-day trial, no credit card required. Compare Pro and Business plans for AI-powered digital signage CMS.");
+  }, []);
+
+  const pricingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "ScreenFusion Digital Signage CMS",
+    "description": "AI-powered, multi-site digital signage CMS with Canva integration, AI demographic profiling, touchscreen web app builder, and dynamic pricing via Google Sheets.",
+    "brand": { "@type": "Brand", "name": "ScreenFusion" },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free Trial",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "14-day free trial with full Pro features. No credit card required.",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro Plan",
+        "price": "13.99",
+        "priceCurrency": "EUR",
+        "unitText": "per screen per month",
+        "description": "Full access to all features including unlimited cloud storage, team management, and customer support.",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "Business Plan",
+        "price": "168",
+        "priceCurrency": "EUR",
+        "unitText": "per screen per year",
+        "description": "Annual plan — 1 month free compared to monthly billing. All Pro features included.",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  };
 
   return (
     <Layout>
@@ -318,6 +360,7 @@ const Pricing = () => {
           </div>
         </div>
       </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
     </Layout>
   );
 };

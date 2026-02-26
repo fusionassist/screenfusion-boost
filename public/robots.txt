@@ -57,3 +57,8 @@ Allow: /
 
 # Sitemap for discoverability
 Sitemap: https://www.screenfusion.ai/sitemap.xml
+
+# LLM-specific content file
+# See https://llmstxt.org
+# Contains structured information about ScreenFusion for AI models
+# Location: https://www.screenfusion.ai/llms.txt

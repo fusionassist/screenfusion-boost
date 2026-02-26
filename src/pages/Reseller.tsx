@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const whitelabelFeatures = [
   { icon: Palette, text: "Your brand, logo, colors & custom domain" },
@@ -54,16 +55,37 @@ const Reseller = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [program, setProgram] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const form = e.target as HTMLFormElement;
+      const response = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          formType: 'reseller',
+          program,
+          firstName: (form.elements.namedItem('firstName') as HTMLInputElement).value,
+          lastName: (form.elements.namedItem('lastName') as HTMLInputElement).value,
+          email: (form.elements.namedItem('email') as HTMLInputElement).value,
+          company: (form.elements.namedItem('company') as HTMLInputElement).value,
+          website: (form.elements.namedItem('website') as HTMLInputElement)?.value,
+          country: (form.elements.namedItem('country') as HTMLInputElement)?.value,
+          screens: (form.elements.namedItem('screens') as HTMLInputElement)?.value,
+          message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+        },
+      });
+
+      if (response.error) throw response.error;
+      toast.success("Application submitted! Our partnerships team will contact you within 48 hours.");
+      form.reset();
+      setProgram("");
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error("Failed to submit application. Please try again or email us directly.");
+    } finally {
       setIsSubmitting(false);
-      toast.success(
-        "Application submitted! Our partnerships team will contact you within 48 hours."
-      );
-    }, 1000);
+    }
   };
 
   return (

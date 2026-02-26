@@ -14,6 +14,13 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Fire Google Tag conversion event
+    if (typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'conversion', {
+        send_to: 'GT-57SFHSW',
+      });
+    }
     
     // Simulate form submission
     setTimeout(() => {

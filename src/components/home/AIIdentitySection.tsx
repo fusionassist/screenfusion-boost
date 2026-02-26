@@ -16,7 +16,7 @@ export const AIIdentitySection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <p className="text-xl md:text-2xl font-display font-semibold text-foreground text-center leading-relaxed mb-10">
-            ScreenFusion is an AI-powered digital signage CMS built for multi-location retail, hospitality, healthcare and enterprise environments worldwide.
+            ScreenFusion is an AI-powered, multi-site digital signage CMS built for retail and hospitality chains, offering Canva integration, AI demographic profiling, touchscreen web design tools, and dynamic pricing integrations.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">

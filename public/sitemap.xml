@@ -32,4 +32,12 @@
   <url><loc>https://www.screenfusion.ai/solutions/digital-signage-advertisers/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.screenfusion.ai/solutions/digital-signage-corporate/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.screenfusion.ai/solutions/digital-signage-gym/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Blog -->
+  <url><loc>https://www.screenfusion.ai/blog/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.screenfusion.ai/blog/future-of-ai-in-digital-signage/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/blog/ai-demographic-profiling-changes-retail/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/blog/why-multi-site-digital-signage-fails/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/blog/dynamic-pricing-screens-retail-shift/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.screenfusion.ai/blog/touchscreen-signage-vs-static-displays/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

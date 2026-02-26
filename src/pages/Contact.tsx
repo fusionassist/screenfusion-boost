@@ -7,11 +7,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -21,12 +22,30 @@ const Contact = () => {
         send_to: 'GT-57SFHSW',
       });
     }
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      const form = e.target as HTMLFormElement;
+      const response = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          formType: 'contact',
+          firstName: (form.elements.namedItem('firstName') as HTMLInputElement).value,
+          lastName: (form.elements.namedItem('lastName') as HTMLInputElement).value,
+          email: (form.elements.namedItem('email') as HTMLInputElement).value,
+          company: (form.elements.namedItem('company') as HTMLInputElement).value,
+          subject: (form.elements.namedItem('subject') as HTMLInputElement).value,
+          message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+        },
+      });
+
+      if (response.error) throw response.error;
       toast.success("Message sent! We'll get back to you within 24 hours.");
-    }, 1000);
+      form.reset();
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error("Failed to send message. Please try again or email us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

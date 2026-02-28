@@ -27,7 +27,7 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { safeSupabase } from "@/integrations/supabase/safe-client";
 
 const whitelabelFeatures = [
   { icon: Palette, text: "Your brand, logo, colors & custom domain" },
@@ -61,7 +61,11 @@ const Reseller = () => {
 
     try {
       const form = e.target as HTMLFormElement;
-      const response = await supabase.functions.invoke('send-contact-email', {
+      if (!safeSupabase) {
+        toast.error("Backend is not available. Please try again later.");
+        return;
+      }
+      const response = await safeSupabase.functions.invoke('send-contact-email', {
         body: {
           formType: 'reseller',
           program,

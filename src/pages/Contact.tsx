@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { safeSupabase } from "@/integrations/supabase/safe-client";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,7 +25,11 @@ const Contact = () => {
 
     try {
       const form = e.target as HTMLFormElement;
-      const response = await supabase.functions.invoke('send-contact-email', {
+      if (!safeSupabase) {
+        toast.error("Backend is not available. Please try again later.");
+        return;
+      }
+      const response = await safeSupabase.functions.invoke('send-contact-email', {
         body: {
           formType: 'contact',
           firstName: (form.elements.namedItem('firstName') as HTMLInputElement).value,

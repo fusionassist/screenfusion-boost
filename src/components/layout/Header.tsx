@@ -47,10 +47,27 @@ const languages = [
 ];
 
 const triggerGoogleTranslate = (langCode: string) => {
+  // Try setting the cookie directly for Google Translate
+  if (langCode === 'en') {
+    // Reset to English by removing the translate cookie
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + window.location.hostname;
+    window.location.reload();
+    return;
+  }
+  
+  // Set the Google Translate cookie
+  document.cookie = `googtrans=/en/${langCode}; path=/;`;
+  document.cookie = `googtrans=/en/${langCode}; path=/; domain=.${window.location.hostname}`;
+  
+  // Try triggering via the select element
   const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
   if (select) {
     select.value = langCode;
-    select.dispatchEvent(new Event('change'));
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+  } else {
+    // If select not found, reload to apply cookie-based translation
+    window.location.reload();
   }
 };
 

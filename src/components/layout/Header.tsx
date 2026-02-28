@@ -234,13 +234,41 @@ export const Header = () => {
           {/* Hidden Google Translate Element */}
           <div id="google_translate_element" />
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-md text-foreground hover:bg-secondary transition-colors"
-          >
-            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          {/* Mobile Language + Hamburger */}
+          <div className="lg:hidden flex items-center gap-1">
+            {/* Mobile Language Globe */}
+            <div className="relative">
+              <button
+                onClick={() => setOpenDropdown(openDropdown === "mobile-language" ? null : "mobile-language")}
+                className="p-2 rounded-md text-foreground hover:bg-secondary transition-colors"
+              >
+                <Globe className="w-5 h-5" />
+              </button>
+              {openDropdown === "mobile-language" && (
+                <div className="absolute top-full right-0 z-50 mt-1 w-44 bg-white rounded-xl border border-border shadow-hover p-1.5 animate-fade-in max-h-80 overflow-y-auto">
+                  <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider px-2.5 py-1.5">17 Languages</p>
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        triggerGoogleTranslate(lang.code);
+                        setOpenDropdown(null);
+                      }}
+                      className="w-full text-left px-2.5 py-2 rounded-lg text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-md text-foreground hover:bg-secondary transition-colors"
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </nav>
       </div>
 
